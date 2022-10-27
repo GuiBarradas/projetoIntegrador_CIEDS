@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            overflow-x: hidden;
+            --alturaMenu: 88px;
+        }
+        #tudo{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            min-height: 100vh;
+            background-color: white;
+            padding: 20px;
+            padding-top: calc(var(--alturaMenu) + 45px);
+            background-image: url(NTLfundo.png);
+            background-repeat: repeat;
+            background-position: 20px 126.73px;
+            background-blend-mode: lighten;
+            background-color: rgba(235, 235, 235, 0.755);
+        }
+        #menu{
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 7px;
+            width: 100%;
+            height: var(--alturaMenu);
+            background-color: rgb(235, 235, 235);
+            box-shadow: 0px 0px 3px black;
+            z-index: 999999;
+        }
+        #logo{
+            position: absolute;
+            left: 2%;
+            width: 180px;
+            height: 60px;
+            background-image: url(NTL.png);
+            background-size: cover;
+        }
+        #titulo{
+            position: relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.401);
+            font-size: 48px;
+            color: black;
+        }
+        #titulo::after{
+            content: 'Hora de codar!';
+            position: absolute;
+            top: 80%;
+            left: 80.4%;
+            font-size: 15px;
+            text-shadow: none;
+            min-width: max-content;
+        }
+        #etapas{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-height: max-content;
+        }
+        .etapa{
+            margin-bottom: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 90%;
+            min-height: 100px;
+            border-radius: 2px;
+            box-shadow: 0px 1px 1px .4px rgba(0, 0, 0, 0.896);
+            cursor: pointer;
+            background-color: white;
+            z-index: 9999;
+        }
+        .etapa:hover{
+            background-color: rgb(239, 239, 239);
+        }
+        .etapa_title{
+            position: absolute;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            user-select: none;
+        }
+        .etapa.active{
+            margin-bottom: 0;
+        }
+
+        .info{
+            position: relative;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 90%;
+            min-height: 100px;
+            padding-top: 15px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: rgba(227, 235, 241, 0.952);
+            animation: open .8s ease 1 forwards;
+            transition-duration: .5s;
+            z-index: 1;
+        }
+        @keyframes open{
+            0%{
+                opacity: 0;
+                top: -100px;
+            }
+            100%{
+                opacity: 1;
+                top: -10px;
+            }
+        }
+        @keyframes close{
+            0%{
+                opacity: 1;
+                top: -10px;
+            }
+            100%{
+                opacity: 0;
+                top: -100px;
+            }
+        }
+
+        .iniciar{
+            font-size: 15px;
+            color: black;
+            padding: 3px;
+            padding-left: 12px;
+            padding-right: 12px;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: .3s;
+        }
+        .iniciar:hover{
+            background-color: rgb(230, 228, 228);
+        }
+
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('.info').forEach(elem => {
+                elem.style.display = 'none';
+            });
+
+            document.querySelectorAll('.etapa').forEach(elem => {
+                elem.addEventListener('click', function(){
+                    var info = elem.className.replace('etapa n', '');
+                    info = document.querySelector('.info.etapan'+info);
+                    if(info.style.display == 'none'){
+                        abrirEtapa(info);
+                    }else{
+                        fecharEtapa(info);
+                    }
+                });
+            });
+        });
+
+        function abrirEtapa(info){
+            var delay = 0;
+            document.querySelectorAll('.info').forEach(elem => {
+                if(elem != info && elem.style.display == 'flex'){
+                    fecharEtapa(elem);
+                    delay = 400;
+                } 
+            });
+            setTimeout(() => {
+                info.style.display = 'flex';
+                info.style.animation = 'open .8s ease 1 forwards';
+            }, delay);
+        }
+
+        function fecharEtapa(info){
+            info.style.animation = 'close .8s ease 1 forwards';
+            setTimeout(() => {
+                info.style.display = 'none';
+            }, 400);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="menu">
+        <span id="logo"></span>
+        <span id="titulo"> Treinamento </span>
+    </div>
+    <div id="tudo">
+        <div id="etapas">
+            <div class="etapa n1">
+                <span class="etapa_title">Etapa 1</span>
+            </div>
+            <div class="info etapan1">
+                Criar uma Database no SQL Server, fazer uma tabela na
+                Database feita anteriormente no SQL com os seguintes campos:
+                código(PK - “chave primária"), nome ,ativo, CPF e data de
+                nascimento (os campos não devem possuir acentos nem espaçamentos
+                no SQL Server nem nas variáveis usadas no sistema) e fazer o
+                protótipo na tela com os mesmos campos criados no SQL. Obs: CPF e
+                Data nascimento devem ter suas respectivas máscaras de campos para
+                facilitar o preenchimento e evitar erros
+                <a href="etapa1.html" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n2">
+                <span class="etapa_title">Etapa 2</span>
+            </div>
+            <div class="info etapan2">
+                Gravar os dados da 1º etapa no banco de dados
+                diretamente pelo sistema, realizar o filtro apresentando:nome,
+                data de nascimento, ativo e CPF , recuperar todos os dados
+                anteriormente gravados pelo filtro, excluir logicamente(inativar o
+                registro). No filtro deverá ser possível pesquisar por nome,
+                ativo, CPF, data de nascimento.
+                <a href="etapa2.html" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n3">
+                <span class="etapa_title">Etapa 3</span>
+            </div>
+            <div class="info etapan3">
+                Impedir que o sejam gravados os seguintes campos sem o
+                preenchimento nome, CPF e data de nascimento , os campos devem
+                ficar na cor amarela para indicar que são campos obrigatórios
+                sendo usada a classe required, como no exemplo abaixo:
+                Apresentar na tela a idade do funcionário de acordo com a
+                data de nascimento, o campo idade deverá ficar na cor cinza
+                indicando que está bloqueado / não deve ser preenchido usando a
+                classe readonly e atributo readonly como no exemplo abaixo:
+                Validar a data de nascimento do funcionário(não permitindo
+                informar uma data futura ou inexistente exemplo: 01/12/2077 ou
+                99/99/1234),aceitar somente CPF válido (pesquisar no google como
+                validar CPF, já existem funções prontas) e verificar se o CPF já
+                foi cadastrado, não permitir 2 funcionários com o mesmo CPF.
+                <a href="etapa3.html" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n4">
+                <span class="etapa_title">Etapa 4</span>
+            </div>
+            <div class="info etapan4">
+                Incluir no cadastro do funcionário RG (com mascara) e o
+                sexo cadastrado em outra tabela no banco de dados FK (chave
+                estrangeira) <- Se não souber perguntar e ver videos no YouTube /
+                pesquisar no google sobre, validar o RG para não permitir
+                duplicidade, e incluir o campo estado civil como uma combo
+                (semelhante ao ativo) e no filtro de cadastro de funcionários
+                fazer a busca por data de nascimento inicio e fim como o exemplo
+                abaixo:
+                <a href="etapa4.html" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n5">
+                <span class="etapa_title">Etapa 5</span>
+            </div>
+            <div class="info etapan5">
+                Fazer um novo accordion (divisão dentro da tela)para
+                contato, dentro dele vão ter duas listas, uma para telefone e
+                outra para email a lista deverá adicionar itens na lista, remover
+                os itens selecionados, ao clicar no hiperlinks da lista o dado
+                deverá voltar ao seus respectivos campos para poder realizar uma
+                possível alteração;
+                 Quando gravar a tela deverá gravar todos os itens na lista se
+                existirem em uma tabela filha referenciando a tabela pai e
+                vincular por FK e ao recuperar todos os dados da lista devem ser
+                preenchidos.
+                Validar os itens em ambas as listas, não permitindo 2
+                telefones iguais ou emails, também não permitir 2 itens principais
+                na lista ex: 2 telefones principais, a lista deverá ficar
+                semelhante ao exemplo abaixo:
+                <a href="etapa5" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n6">
+                <span class="etapa_title">Etapa 6</span>
+            </div>
+            <div class="info etapan6">
+                Criar um novo accordion de endereço contendo os
+                seguintes campos: CEP, Logradouro, número, complemento, UF, bairro
+                e cidade, gravar e recuperar esses campos (na mesma tabela).
+                Implementar busca por CEP preencher todos os dados do
+                endereço de forma automática.
+                Criar uma nova tela (separada) de tipo de dependente, com
+                código, descrição e ativo com todas as funcionalidades de gravar,
+                recuperar e excluir.
+                Fazer o filtro para a tela de tipo dependente filtrando pela
+                descrição e por ativos.
+                Criar campos: primeiro emprego(obrigatório) e pispasep , se
+                for primeiro emprego o candidato não precisa informar o pis e se
+                tiver preenchido “SIM" o valor deverá ser apagado e bloqueado no
+                readonly. Obs: ao recuperar o cadastro o sistema também deverá
+                bloquear ou liberar os campos.
+                <a href="etapa6" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n7">
+                <span class="etapa_title">Etapa 7</span>
+            </div>
+            <div class="info etapan7">
+                Montar menu lateral
+                por telas, ( no
+                config.ui.php )cada tela deverá
+                pertencer ao seu menu e todos os
+                itens da tela devem ser coerentes
+                ao seu menu lateral.
+                Em amarelo está o menu Cadastro e
+                em rosa o submenu Projeto que
+                está dentro do cadastro. Na parte
+                superior da página também precisa
+                ser referenciado de forma certa
+                de acordo com o menu. A seta
+                vermelha aponta para o indicador
+                de qual parte do menu a pessoa está usando no momento atual, deve
+                aparecer o nome da tela que ela está nesse caso tanto a tela de
+                projetoCadastro.php e projetoFiltro.php apontam para projeto pois
+                pertencem ao menu cadastro/projeto
+                Essas configurações precisam ser feitas em TODAS as telas.
+                <a href="etapa7" class="iniciar">Iniciar</a>
+            </div>
+            
+            <div class="etapa n8">
+                <span class="etapa_title">Etapa 8</span>
+            </div>
+            <div class="info etapan8">
+                Na tela de cadastro funcionário criar um novo accordion
+                de dependentes contendo uma lista grande com os seguintes campos:
+                nome, CPF, data de nascimento, e tipo dependente (da tela
+                cadastrada anteriormente(FK)). É necessário validar a lista
+                adicionar e realizar todos os processos feitos nas listas
+                anteriores, também é preciso ver se o CPF do dependente é válido.
+                Obrigar o funcionário a registrar pelo menos uma forma de
+                contato antes de gravar o cadastro.
+                Nas tabelas básicas de sexo e tipo dependente verificar se
+                foi feita uma validação para impedir cadastrar dois nomes iguais
+                para não haver duplicidade.
+                <a href="etapa8" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n9">
+                <span class="etapa_title">Etapa 9</span>
+            </div>
+            <div class="info etapan9">
+                No filtro fazer um relatório geral de funcionários
+                ativos o filtro pode ser feito por sexo ou estado civil; O
+                objetivo do relatório é usar os dados do sistema para gerar alguma
+                informação útil.
+                O relatório deverá ser feito em PDF com os exemplos que vão
+                ser informados no Discord porém cada um pode usar a sua
+                criatividade para preencher da melhor forma possível o PDF
+                Exemplos de PDF já existentes:
+                <a href="etapa9" class="iniciar">Iniciar</a>
+            </div>
+
+            <div class="etapa n10">
+                <span class="etapa_title">Etapa 10</span>
+            </div>
+            <div class="info etapan10">
+                Fazer relatórios dentro da tela, na aba de contato
+                criar um botão que só deverá aparecer ao recuperar a tela do
+                funcionário, o primeiro botão deverá ficar localizado no footer da
+                página com o nome “Relatório Contato", ao clicar no botão vai
+                gerar um relatório de dados de contato com cabeçalho e trazendo as
+                listas de contato da pessoa que está sendo apresentada na tela.
+                <a href="etapa10" class="iniciar">Iniciar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
