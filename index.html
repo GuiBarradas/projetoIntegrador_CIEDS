@@ -215,14 +215,14 @@
                 <span class="etapa_title">Etapa 1</span>
             </div>
             <div class="info etapan1">
-                Criar uma Database no SQL Server, fazer uma tabela na
-                Database feita anteriormente no SQL com os seguintes campos:
-                código(PK - “chave primária"), nome ,ativo, CPF e data de
-                nascimento (os campos não devem possuir acentos nem espaçamentos
-                no SQL Server nem nas variáveis usadas no sistema) e fazer o
+                Criar um banco de dados no SQL Server e fazer uma tabela
+                com os seguintes campos:
+                Código(PK - “chave primária"), nome, ativo, CPF e data de
+                nascimento (Os campos não devem possuir acentos e nem espaçamentos
+                no SQL Server, nem nas variáveis usadas no sistema) e fazer o
                 protótipo na tela com os mesmos campos criados no SQL. Obs: CPF e
-                Data nascimento devem ter suas respectivas máscaras de campos para
-                facilitar o preenchimento e evitar erros
+                data de nascimento devem ter suas respectivas máscaras de campos para
+                facilitar o preenchimento e evitar erros.
                 <a href="etapa1.html" class="iniciar">Iniciar</a>
             </div>
 
@@ -231,9 +231,9 @@
             </div>
             <div class="info etapan2">
                 Gravar os dados da 1º etapa no banco de dados
-                diretamente pelo sistema, realizar o filtro apresentando:nome,
-                data de nascimento, ativo e CPF , recuperar todos os dados
-                anteriormente gravados pelo filtro, excluir logicamente(inativar o
+                diretamente pelo sistema, construir o filtro apresentando: nome,
+                data de nascimento, ativo e CPF. Recuperar todos os dados
+                anteriormente gravados pelo filtro e excluir logicamente(inativar o
                 registro). No filtro deverá ser possível pesquisar por nome,
                 ativo, CPF, data de nascimento.
                 <a href="etapa2.html" class="iniciar">Iniciar</a>
@@ -243,19 +243,20 @@
                 <span class="etapa_title">Etapa 3</span>
             </div>
             <div class="info etapan3">
-                Impedir que o sejam gravados os seguintes campos sem o
-                preenchimento nome, CPF e data de nascimento , os campos devem
+                Impedir que sejam gravados os seguintes campos sem o
+                preenchimento: nome, CPF e data de nascimento. Os campos devem
                 ficar na cor amarela para indicar que são campos obrigatórios
-                sendo usada a classe required, como no exemplo abaixo:
+                utilizando a classe required;
                 Apresentar na tela a idade do funcionário de acordo com a
                 data de nascimento, o campo idade deverá ficar na cor cinza
                 indicando que está bloqueado / não deve ser preenchido usando a
-                classe readonly e atributo readonly como no exemplo abaixo:
-                Validar a data de nascimento do funcionário(não permitindo
-                informar uma data futura ou inexistente exemplo: 01/12/2077 ou
-                99/99/1234),aceitar somente CPF válido (pesquisar no google como
-                validar CPF, já existem funções prontas) e verificar se o CPF já
-                foi cadastrado, não permitir 2 funcionários com o mesmo CPF.
+                classe readonly e atributo readonly;
+                Validar a data de nascimento do funcionário (Não permitindo
+                informar uma data futura ou inexistente exemplo: 27/10/2077 ou
+                99/99/1234);
+                Aceitar somente CPF válido e verificar se o CPF já
+                foi cadastrado;
+                Não permitir 2 funcionários com o mesmo CPF.
                 <a href="etapa3.html" class="iniciar">Iniciar</a>
             </div>
 
@@ -263,14 +264,13 @@
                 <span class="etapa_title">Etapa 4</span>
             </div>
             <div class="info etapan4">
-                Incluir no cadastro do funcionário RG (com mascara) e o
-                sexo cadastrado em outra tabela no banco de dados FK (chave
-                estrangeira) <- Se não souber perguntar e ver videos no YouTube /
-                pesquisar no google sobre, validar o RG para não permitir
-                duplicidade, e incluir o campo estado civil como uma combo
+                Incluir no cadastro do funcionário o RG (com mascara) e o
+                sexo cadastrado em uma tabela SEPARADA no banco de dados como FK (chave
+                estrangeira) <- Pesquisar sobre;<br>
+                Validar o RG para não permitir
+                duplicidade e incluir o campo estado civil como uma combo
                 (semelhante ao ativo) e no filtro de cadastro de funcionários
-                fazer a busca por data de nascimento inicio e fim como o exemplo
-                abaixo:
+                fazer a busca por data de nascimento inicial e final.
                 <a href="etapa4.html" class="iniciar">Iniciar</a>
             </div>
 
@@ -278,20 +278,18 @@
                 <span class="etapa_title">Etapa 5</span>
             </div>
             <div class="info etapan5">
-                Fazer um novo accordion (divisão dentro da tela)para
-                contato, dentro dele vão ter duas listas, uma para telefone e
-                outra para email a lista deverá adicionar itens na lista, remover
-                os itens selecionados, ao clicar no hiperlinks da lista o dado
-                deverá voltar ao seus respectivos campos para poder realizar uma
-                possível alteração;
-                 Quando gravar a tela deverá gravar todos os itens na lista se
-                existirem em uma tabela filha referenciando a tabela pai e
-                vincular por FK e ao recuperar todos os dados da lista devem ser
-                preenchidos.
+                Fazer um novo accordion (Divisão dentro da tela) para
+                contato e dentro dele vão ter duas listas: uma para telefone e
+                outra para email. Deverá ser possível adicionar itens na lista, remover
+                os itens selecionados e ao clicar no hiperlinks da lista o dado
+                deverá voltar aos seus respectivos campos para que possíveis alterações possam ser realizadas;
+                Quando gravar, a tela deverá salvar todos os itens na lista, se
+                existirem, em uma tabela filha, referenciando a tabela pai e
+                vincular-la por FK e, ao recuperar, todos os dados da lista devem ser
+                preenchidos;
                 Validar os itens em ambas as listas, não permitindo 2
-                telefones iguais ou emails, também não permitir 2 itens principais
-                na lista ex: 2 telefones principais, a lista deverá ficar
-                semelhante ao exemplo abaixo:
+                telefones ou emails iguais, também não permitir 2 itens principais
+                na lista. Ex: 2 telefones principais.
                 <a href="etapa5.html" class="iniciar">Iniciar</a>
             </div>
 
@@ -322,22 +320,15 @@
             </div>
             <div class="info etapan7">
                 Montar menu lateral
-                por telas, ( no
-                config.ui.php )cada tela deverá
+                por telas (No
+                config.ui.php); Cada tela deverá
                 pertencer ao seu menu e todos os
                 itens da tela devem ser coerentes
-                ao seu menu lateral.
-                Em amarelo está o menu Cadastro e
-                em rosa o submenu Projeto que
-                está dentro do cadastro. Na parte
-                superior da página também precisa
-                ser referenciado de forma certa
-                de acordo com o menu. A seta
-                vermelha aponta para o indicador
-                de qual parte do menu a pessoa está usando no momento atual, deve
-                aparecer o nome da tela que ela está nesse caso tanto a tela de
-                projetoCadastro.php e projetoFiltro.php apontam para projeto pois
-                pertencem ao menu cadastro/projeto
+                ao seu menu lateral;
+                Na parte
+                superior da página também precisará
+                estar referenciado de forma correta
+                de acordo com o menu. Adicionar um ponteiro no menu lateral mostrando ao usuário qual página ele atualmente está;
                 Essas configurações precisam ser feitas em TODAS as telas.
                 <a href="etapa7.html" class="iniciar">Iniciar</a>
             </div>
@@ -346,14 +337,14 @@
                 <span class="etapa_title">Etapa 8</span>
             </div>
             <div class="info etapan8">
-                Na tela de cadastro funcionário criar um novo accordion
-                de dependentes contendo uma lista grande com os seguintes campos:
-                nome, CPF, data de nascimento, e tipo dependente (da tela
-                cadastrada anteriormente(FK)). É necessário validar a lista
+                Na tela de cadastro de funcionário criar um novo accordion
+                para dependentes, contendo uma lista grande com os seguintes campos:
+                nome, CPF, data de nascimento e tipo dependente (da tela
+                cadastrada anteriormente(FK)); É necessário validar a lista,
                 adicionar e realizar todos os processos feitos nas listas
-                anteriores, também é preciso ver se o CPF do dependente é válido.
-                Obrigar o funcionário a registrar pelo menos uma forma de
-                contato antes de gravar o cadastro.
+                anteriores e também é preciso ver se o CPF do dependente é válido;
+                Obrigar o usuário a registrar pelo menos uma forma de
+                contato antes de gravar o cadastro;
                 Nas tabelas básicas de sexo e tipo dependente verificar se
                 foi feita uma validação para impedir cadastrar dois nomes iguais
                 para não haver duplicidade.
