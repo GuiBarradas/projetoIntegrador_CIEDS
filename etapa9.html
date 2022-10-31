@@ -1,12 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etapa 9</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            --alturaMenu: 88px;
+        }
+
+        #tudo {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            min-height: 100vh;
+            background-color: white;
+            padding: 20px;
+            padding-top: calc(var(--alturaMenu) + 45px);
+            background-image: url(NTLfundo.png);
+            background-repeat: repeat;
+            background-position: 20px 126.73px;
+            background-blend-mode: lighten;
+            background-color: rgba(235, 235, 235, 0.755);
+        }
+
+        #menu {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 7px;
+            width: 100%;
+            height: var(--alturaMenu);
+            background-color: rgb(235, 235, 235);
+            box-shadow: 0px 0px 3px black;
+            z-index: 999999;
+        }
+
+        #logo {
+            position: absolute;
+            left: 2%;
+            width: 180px;
+            height: 60px;
+            background-image: url(NTL.png);
+            background-size: cover;
+        }
+
+        #titulo {
+            position: relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.401);
+            font-size: 48px;
+            color: black;
+        }
+
+        #titulo::after {
+            content: 'Hora de codar!';
+            position: absolute;
+            top: 80%;
+            left: 80.4%;
+            font-size: 15px;
+            text-shadow: none;
+            min-width: max-content;
+        }
+
+        #etapas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-height: max-content;
+        }
+
+        .etapa {
+            margin-bottom: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 90%;
+            min-height: 100px;
+            border-radius: 2px;
+            box-shadow: 0px 1px 1px .4px rgba(0, 0, 0, 0.896);
+            cursor: pointer;
+            background-color: white;
+            z-index: 9999;
+        }
+
+        .etapa:hover {
+            background-color: rgb(239, 239, 239);
+        }
+
+        .etapa_title {
+            position: absolute;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            user-select: none;
+        }
+
+        .etapa.active {
+            margin-bottom: 0;
+        }
+
+        .info {
+            position: relative;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 90%;
+            min-height: 100px;
+            padding-top: 15px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: rgba(227, 235, 241, 0.952);
+            animation: open .8s ease 1 forwards;
+            transition-duration: .5s;
+            z-index: 1;
+        }
+
+        @keyframes open {
+            0% {
+                opacity: 0;
+                top: -100px;
+            }
+
+            100% {
+                opacity: 1;
+                top: -10px;
+            }
+        }
+
+        @keyframes close {
+            0% {
+                opacity: 1;
+                top: -10px;
+            }
+
+            100% {
+                opacity: 0;
+                top: -100px;
+            }
+        }
+
+        .iniciar {
+            font-size: 15px;
+            color: black;
+            padding: 3px;
+            padding-left: 12px;
+            padding-right: 12px;
+            background-color: whitesmoke;
+            border: 2px solid black;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: .3s;
+        }
+
+        .iniciar:hover {
+            background-color: rgb(230, 228, 228);
+        }
+    </style>
+
 </head>
+
 <body>
-    
+    <div id="menu">
+        <span id="logo"></span>
+        <span id="titulo"> Treinamento </span>
+    </div>
+
+    <div id="tudo">
+
+    </div>
 </body>
+
 </html>
