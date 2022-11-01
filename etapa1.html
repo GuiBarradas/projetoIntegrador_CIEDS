@@ -78,7 +78,7 @@
         }
 
         #text {
-            font-family:verdana;
+            font-family: verdana;
         }
 
         #etapas {
@@ -190,6 +190,26 @@
             padding: 15px;
             border-radius: 3px;
         }
+
+        #botaoVolta {
+            position: absolute;
+            right: 2%;
+            width: 100px;
+            height: 45px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            cursor: pointer;
+
+        }
+
+        #botaoVoltar hover {
+            background-color: rgb(0, 0, 0);
+        }
+        #botao {
+            position: absolute;
+            right: 2%;
+            top: 25%;
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -198,18 +218,22 @@
     <div id="menu">
         <span id="logo"></span>
         <span id="titulo"> Treinamento </span>
+        <a class="link" href="index.html" id="botao"><button type="button" class="btn btn-outline-dark" id="botaoVolta">Voltar</button></a>    
     </div>
+
     <div id="tudo">
         <div class="content" style="font-family:verdana">
             <iframe width="1255" height="370" src="https://www.youtube.com/embed/tgbNymZ7vqY">
             </iframe>
             <br><br>
-            <p>    
+            <p>
                 <strong>Primeiro Passo.</strong>
             </p>
             <br>
-            Criar um banco de dados no SQL Server e fazer uma tabela com os seguintes campos:<br><br> 
-            - Código(PK - "<a href="https://www.devmedia.com.br/sql-aprenda-a-utilizar-a-chave-primaria-e-a-chave-estrangeira/37636">chave primária</a>").<br>
+            Criar um banco de dados no SQL Server e fazer uma tabela com os seguintes campos:<br><br>
+            - Código(PK - "<a
+                href="https://www.devmedia.com.br/sql-aprenda-a-utilizar-a-chave-primaria-e-a-chave-estrangeira/37636">chave
+                primária</a>").<br>
             - Nome (varchar).<br>
             - Ativo (int).<br>
             - CPF (varchar).<br>
@@ -228,9 +252,19 @@
             </a><br>
             <a href="http://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/mascaras-forms/">
                 Colocando Máscaras nos campos do formulario.
-            </a><br>            
+            </a><br>
         </div>
     </div>
+
+    <script>
+        function voltar() {
+            $(location).attr('href', 'index.html');
+        }
+
+        $("#botaoVolta").on("click", function() {
+            voltar();
+        });
+    </script>
 </body>
 
 </html>
