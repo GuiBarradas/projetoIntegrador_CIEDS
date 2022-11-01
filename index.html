@@ -251,7 +251,7 @@
             </div>
             <div class="info etapan2">
                 Gravar os dados da 1º etapa no banco de dados
-                diretamente pelo sistema e construir o filtro apresentando: nome,
+                diretamente pelo sistema e construir o filtro apresentando: Nome,
                 data de nascimento, ativo e CPF. Recuperar todos os dados
                 anteriormente gravados pelo filtro e excluir logicamente (Inativar o
                 registro). No filtro deverá ser possível pesquisar por nome,
@@ -272,10 +272,10 @@
                 indicando que está bloqueado / não deve ser preenchido usando a
                 classe "readonly" e atributo "readonly";
                 Validar a data de nascimento do funcionário (Não permitindo
-                informar uma data futura ou inexistente exemplo: 27/10/2077 ou
-                99/99/1234);
-                Aceitar somente CPF válido e verificar se o CPF já
-                foi cadastrado;
+                informar uma data futura ou inexistente exemplo: "27/10/2077" ou
+                "99/99/1234");
+                Aceitar somente CPF válidos e verificar se o CPF já
+                foi cadastrado no sistema;
                 Não permitir 2 funcionários com o mesmo CPF.
                 <a href="etapa3.html" class="iniciar">Iniciar</a>
             </div>
@@ -284,13 +284,13 @@
                 <span class="etapa_title">Etapa 4</span>
             </div>
             <div class="info etapan4">
-                Incluir no cadastro do funcionário o RG (com mascara) e o
-                sexo cadastrado em uma tabela SEPARADA no banco de dados como FK (chave
-                estrangeira) <- Pesquisar sobre;<br>
+                Incluir no cadastro do funcionário o RG (Com sua devida máscara) e o
+                sexo cadastrado em uma tabela SEPARADA no banco de dados como FK (Chave
+                Estrangeira) <- Pesquisar sobre;<br>
                     Validar o RG para não permitir
-                    duplicidade e incluir o campo estado civil como uma combo
-                    (semelhante ao ativo) e no filtro de cadastro de funcionários
-                    fazer a busca por data de nascimento inicial e final.
+                    duplicidade, incluir o campo "Estado Civil" como uma combo
+                    (Semelhante ao ativo) e no filtro de cadastro de funcionários
+                    criar parâmetro de filtragem a partir de data de nascimento inicial e final.
                     <a href="etapa4.html" class="iniciar">Iniciar</a>
             </div>
 
@@ -299,10 +299,10 @@
             </div>
             <div class="info etapan5">
                 Fazer um novo accordion (Divisão dentro da tela) para
-                contato e dentro dele vão ter duas listas: uma para telefone e
+                contato e dentro dele vão ter duas listas: Uma para telefone e
                 outra para email. Deverá ser possível adicionar itens na lista, remover
-                os itens selecionados e ao clicar no hiperlinks da lista o dado
-                deverá voltar aos seus respectivos campos para que possíveis alterações possam ser realizadas;
+                os itens selecionados e, ao clicar no hiperlinks da lista, os dados
+                deverão voltar aos seus respectivos campos para que possíveis alterações possam ser realizadas;
                 Quando gravar, a tela deverá salvar todos os itens na lista, se
                 existirem, em uma tabela filha, referenciando a tabela pai e
                 vincular-la por FK e, ao recuperar, todos os dados da lista devem ser
@@ -318,19 +318,19 @@
             </div>
             <div class="info etapan6">
                 Criar um novo accordion de endereço contendo os
-                seguintes campos: CEP, Logradouro, número, complemento, UF, bairro
-                e cidade, gravar e recuperar esses campos (na mesma tabela).
-                Implementar busca por CEP preencher todos os dados do
+                seguintes campos: CEP, logradouro, número, complemento, UF, bairro,
+                cidade e gravar e recuperar esses campos (Na mesma tabela).
+                Implementar busca por CEP, preenchendo todos os dados do
                 endereço de forma automática.
-                Criar uma nova tela (separada) de tipo de dependente, com
+                Criar uma nova tela (Separada) de "Tipo de Dependente", com
                 código, descrição e ativo com todas as funcionalidades de gravar,
                 recuperar e excluir.
-                Fazer o filtro para a tela de tipo dependente filtrando pela
-                descrição e por ativos.
-                Criar campos: primeiro emprego(obrigatório) e pispasep , se
-                for primeiro emprego o candidato não precisa informar o pis e se
+                Fazer o filtro para a tela de tipo dependente buscando pela
+                descrição e por ativo.
+                Criar campos: Primeiro emprego (Obrigatório) e PisPasep (Se
+                for primeiro emprego. o candidato não precisa informar o pis e se
                 tiver preenchido “SIM" o valor deverá ser apagado e bloqueado no
-                readonly. Obs: ao recuperar o cadastro o sistema também deverá
+                readonly). Obs: Ao recuperar o cadastro, o sistema também deverá
                 bloquear ou liberar os campos.
                 <a href="etapa6.html" class="iniciar">Iniciar</a>
             </div>
@@ -339,7 +339,7 @@
                 <span class="etapa_title">Etapa 7</span>
             </div>
             <div class="info etapan7">
-                Montar menu lateral
+                Montar um menu lateral
                 por telas (No
                 config.ui.php); Cada tela deverá
                 pertencer ao seu menu e todos os
@@ -347,7 +347,7 @@
                 ao seu menu lateral;
                 Na parte
                 superior da página também precisará
-                estar referenciado de forma correta
+                estar referenciado, de forma correta,
                 de acordo com o menu. Adicionar um ponteiro no menu lateral mostrando ao usuário qual página ele
                 atualmente está;
                 Essas configurações precisam ser feitas em TODAS as telas.
@@ -360,13 +360,13 @@
             <div class="info etapan8">
                 Na tela de cadastro de funcionário criar um novo accordion
                 para dependentes, contendo uma lista grande com os seguintes campos:
-                nome, CPF, data de nascimento e tipo dependente (da tela
+                Nome, CPF, data de nascimento e tipo dependente (Da tela
                 cadastrada anteriormente(FK)); É necessário validar a lista,
                 adicionar e realizar todos os processos feitos nas listas
                 anteriores e também é preciso ver se o CPF do dependente é válido;
                 Obrigar o usuário a registrar pelo menos uma forma de
                 contato antes de gravar o cadastro;
-                Nas tabelas básicas de sexo e tipo dependente verificar se
+                Nas tabelas básicas de Sexo e Tipo Dependente verificar se
                 foi feita uma validação para impedir cadastrar dois nomes iguais
                 para não haver duplicidade.
                 <a href="etapa8.html" class="iniciar">Iniciar</a>
