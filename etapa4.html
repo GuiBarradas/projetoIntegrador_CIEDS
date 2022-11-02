@@ -80,6 +80,10 @@
             min-width: max-content;
         }
 
+        #text {
+            font-family: 'Inter', sans-serif;
+        }
+
         #etapas {
             display: flex;
             justify-content: center;
@@ -180,6 +184,16 @@
             background-color: rgb(230, 228, 228);
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        .content {
+            background: white;
+            padding: 15px;
+            border-radius: 3px;
+        }
+
         #botaoVolta {
             position: absolute;
             right: 2%;
@@ -231,6 +245,12 @@
             color: #cdfeaa;
         }
 
+        .tutorial {
+            /* text-decoration: underline;
+            text-decoration-color: greenyellow;
+            text-underline-position: under; */
+            font-weight: bold;
+        }
     </style>
 
 </head>
@@ -244,8 +264,56 @@
     </div>
 
     <div id="tudo">
+        <div class="content" style="font-family:'Inter', sans-serif;">
+            <iframe width="1255" height="370" src="https://www.youtube.com/watch?v=l7h1YmgXXgw">
+            </iframe>
+            <br><br>
+            <p><strong>Adicionando Campos Novos:</strong></p>
+            <br>
+            <p>
+                <strong>Primeiro Passo:</strong>
+            </p>
+            Incluir no cadastro do funcionário o RG (Com máscara e validação) e o sexo cadastrado em uma tabela SEPARADA
+            no banco de dados como FK (Chave Estrangeira).
+            <br><br>
 
+            <p>
+                <strong>Segundo Passo:</strong>
+            </p>
+            Incluir o campo "Estado Civil" como uma <a
+                href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/select">
+                combo box
+            </a>.
+            <br><br>
+            <p>
+                <strong>Terceiro Passo:</strong>
+            </p>
+            No filtro de cadastro de funcionários criar parâmetro de filtragem a partir de data de nascimento
+            inicial e final.
+            <br><br>
+            <p>
+            <div class="tutorial">Tutoriais Úteis:</div>
+            </p>
+            <a href="https://www.devmedia.com.br/sql-aprenda-a-utilizar-a-chave-primaria-e-a-chave-estrangeira/37636">
+                Entenda como funcionam chaves estrangeiras.
+            </a>
+            <br><br>
+            <a href="http://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/mascaras-forms/">
+                Colocando Máscaras nos campos do formulario.
+            </a><br><br>
+
+        </div>
     </div>
+
+    <script>
+        function voltar() {
+            $(location).attr('href', 'index.html');
+        }
+
+        $("#botaoVolta").on("click", function () {
+            voltar();
+        });
+    </script>
 </body>
 
 </html>

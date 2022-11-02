@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
 
+
     <style>
         * {
             padding: 0;
@@ -78,6 +79,10 @@
             font-size: 15px;
             text-shadow: none;
             min-width: max-content;
+        }
+
+        #text {
+            font-family: 'Inter', sans-serif;
         }
 
         #etapas {
@@ -180,6 +185,16 @@
             background-color: rgb(230, 228, 228);
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        .content {
+            background: white;
+            padding: 15px;
+            border-radius: 3px;
+        }
+
         #botaoVolta {
             position: absolute;
             right: 2%;
@@ -231,6 +246,12 @@
             color: #cdfeaa;
         }
 
+        .tutorial {
+            /* text-decoration: underline;
+            text-decoration-color: greenyellow;
+            text-underline-position: under; */
+            font-weight: bold;
+        }
     </style>
 
 </head>
@@ -244,8 +265,54 @@
     </div>
 
     <div id="tudo">
-
+        <div class="content" style="font-family:'Inter', sans-serif;">
+            <!-- <iframe width="1255" height="370" src="https://www.youtube.com/embed/Yvw60m0E9D8">
+            </iframe> -->
+            <p>
+                <strong>Formatando Os Campos Do Formulario</strong>
+            </p>
+            <br><br>
+            <p>
+                <strong>Primeiro Passo:</strong>
+            </p>
+            Impedir que os seguintes campos sejam gravados sem o devido preenchimento: Nome, CPF e data de nascimento.
+            Os campos devem ficar na cor amarela para indicar que são campos obrigatórios utilizando a classe
+            "required".
+            <br><br>
+            <p>
+                <strong>Segundo Passo:</strong>
+            </p>
+            Apresentar na tela a idade do funcionário de acordo com a data de nascimento. 
+            O campo idade deverá ficar na cor cinza indicando que está bloqueado, usando "readonly" como classe 
+            e atributo.
+            <br><br>
+            <p>
+                <strong>Terceiro Passo:</strong>
+            </p> Validar a data de nascimento do funcionário. Não permitindo informar uma data futura
+            ou inexistente como: "27/10/2077" ou "99/99/1234".
+            <br><br>
+            <p>
+                <strong>Quarto Passo:</strong>
+            </p>
+            Aceitar somente CPF válidos e verificar se o CPF já
+            foi cadastrado no sistema além de não permitir 2 funcionários com o mesmo CPF.
+            <br><br>
+            <div class="tutorial">Tutoriais Úteis:</div>
+            <a href="https://dev.to/elisangelamsilva/validacao-e-formatacao-de-campos-e-dados-com-html-e-javascript-3l9g">
+                Este link apresenta verifações por meio de expressões regulares, porém é possivél encontrar diversas validações de CPF e data de nascimento pela web.
+            </a><br><br>
+        </div>
     </div>
+
+    <script>
+        function voltar() {
+            $(location).attr('href', 'index.html');
+        }
+
+        $("#botaoVolta").on("click", function () {
+            voltar();
+        });
+    </script>
 </body>
 
 </html>

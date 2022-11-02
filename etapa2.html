@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
 
+
     <style>
         * {
             padding: 0;
@@ -78,6 +79,10 @@
             font-size: 15px;
             text-shadow: none;
             min-width: max-content;
+        }
+
+        #text {
+            font-family: 'Inter', sans-serif;
         }
 
         #etapas {
@@ -180,6 +185,16 @@
             background-color: rgb(230, 228, 228);
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        .content {
+            background: white;
+            padding: 15px;
+            border-radius: 3px;
+        }
+
         #botaoVolta {
             position: absolute;
             right: 2%;
@@ -231,6 +246,12 @@
             color: #cdfeaa;
         }
 
+        .tutorial {
+            /* text-decoration: underline;
+            text-decoration-color: greenyellow;
+            text-underline-position: under; */
+            font-weight: bold;
+        }
     </style>
 
 </head>
@@ -244,8 +265,41 @@
     </div>
 
     <div id="tudo">
+        <div class="content" style="font-family:'Inter', sans-serif;">
+            <strong>*Foto exemplo de filtro aqui*</strong>
+            <p>
+                <strong>Criar Tela de Filtro e Função De Cadastro De Dados:</strong>
+            </p><br>
 
+            <p>
+                <strong>Primeiro Passo:</strong>
+            </p>
+            Gravar os dados da 1º etapa no banco de dados pela tela do formulario.
+            <br><br>
+            <p>
+                <strong>Segundo Passo:</strong>
+            </p>
+            A tela também deve ser capaz de recuperar todos os dados anteriormente gravados e excluir logicamente (Inativar o registro). 
+            <br><br>
+            <p>
+                <strong>Terceiro Passo:</strong>
+            </p>
+            <p>Construir uma tela de filtro apresentando: Nome, data de nascimento, ativo e CPF.</p>           
+            <p>A tela de filtro deverá poder pesquisar por nome, ativo, CPF e data de nascimento.</p>
+            <br><br>
+            <div class="tutorial">Codigos de exemplo devem ser solicitados ao supervisor, em relação as funções de gravar de recuperar.</div>
+        </div>
     </div>
+
+    <script>
+        function voltar() {
+            $(location).attr('href', 'index.html');
+        }
+
+        $("#botaoVolta").on("click", function () {
+            voltar();
+        });
+    </script>
 </body>
 
 </html>
