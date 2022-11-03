@@ -10,7 +10,7 @@ var etapas =
             #*
             video:https://www.youtube.com/embed/4TfJQussrvs
             #*
-            subtopico:Após o vídeo ser assistido, crie uma tabela no Database feito anteriormente com as seguintes colunas:
+            subtopico:Após o vídeo ser assistido, crie uma tabela na Database feita anteriormente com as seguintes colunas:
             lista:Código(PK - “chave primária")%Nome%Ativo%CPF%Data de nascimento
             #*
             Obs: (Os campos não devem possuir acentos ou espaçamentos no SQL Server e nem nas variáveis usadas no sistema)
