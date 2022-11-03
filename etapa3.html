@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="assets/icone.ico"/>
 
     <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         html {
@@ -34,7 +35,7 @@
             background-color: white;
             padding: 20px;
             padding-top: calc(var(--alturaMenu) + 45px);
-            background-image: url(NTLfundo.png);
+            background-image: url(assets/NTLfundo.png);
             background-repeat: repeat;
             background-position: 20px 126.73px;
             background-blend-mode: lighten;
@@ -59,7 +60,7 @@
             left: 2%;
             width: 180px;
             height: 60px;
-            background-image: url(NTL.png);
+            background-image: url(assets/NTL.png);
             background-size: cover;
         }
 
@@ -72,7 +73,7 @@
         }
 
         #titulo::after {
-            content: 'Etapa 3';
+            content: 'Etapa 3!';
             position: absolute;
             top: 80%;
             left: 80.4%;
@@ -81,139 +82,183 @@
             min-width: max-content;
         }
 
-        #text {
-            font-family: 'Inter', sans-serif;
-        }
-
-        #etapas {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
-            max-height: max-content;
-        }
-
-        .etapa {
-            margin-bottom: 10px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 90%;
-            min-height: 100px;
-            border-radius: 2px;
-            box-shadow: 0px 1px 1px .4px rgba(0, 0, 0, 0.896);
-            cursor: pointer;
-            background-color: white;
-            z-index: 9999;
-        }
-
-        .etapa:hover {
-            background-color: rgb(239, 239, 239);
-        }
-
-        .etapa_title {
+        #voltar {
             position: absolute;
-            font-family: 'Inter', sans-serif;
-            font-weight: bold;
-            font-size: 20px;
-            user-select: none;
-        }
-
-        .etapa.active {
-            margin-bottom: 0;
-        }
-
-        .info {
-            position: relative;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
-            font-family: 'Inter', sans-serif;
-            width: 90%;
-            min-height: 100px;
-            padding-top: 15px;
-            padding-bottom: 20px;
-            padding-left: 40px;
-            padding-right: 40px;
-            background-color: rgba(227, 235, 241, 0.952);
-            animation: open .8s ease 1 forwards;
-            transition-duration: .5s;
-            z-index: 1;
-        }
-
-        @keyframes open {
-            0% {
-                opacity: 0;
-                top: -100px;
-            }
-
-            100% {
-                opacity: 1;
-                top: -10px;
-            }
-        }
-
-        @keyframes close {
-            0% {
-                opacity: 1;
-                top: -10px;
-            }
-
-            100% {
-                opacity: 0;
-                top: -100px;
-            }
-        }
-
-        .iniciar {
-            font-size: 15px;
-            color: black;
-            padding: 3px;
-            padding-left: 12px;
-            padding-right: 12px;
-            background-color: whitesmoke;
-            border: 2px solid black;
-            text-decoration: none;
-            cursor: pointer;
-            transition-duration: .3s;
-        }
-
-        .iniciar:hover {
-            background-color: rgb(230, 228, 228);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .content {
-            background: white;
-            padding: 15px;
-            border-radius: 3px;
-        }
-
-        #botaoVolta {
-            position: absolute;
+            top: 23%;
             right: 2%;
             width: 100px;
             height: 45px;
             font-family: 'Inter', sans-serif;
+            outline: none;
             cursor: pointer;
-
         }
 
-        #botaoVolta hover {
+        #voltar hover {
             background-color: rgb(0, 0, 0);
         }
 
-        #botao {
-            position: absolute;
-            right: 2%;
-            top: 25%;
+        #etapa {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            gap: 26px;
+            width: 90%;
+            min-height: 80vh;
+            padding: 50px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.542);
+        }
+
+        #titulo_etapa {
+            font-size: 31px;
+        }
+
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            align-self: flex-start;
+            gap: 20px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .topicos {
+            width: 70%;
+            font-size: 35px;
+        }
+
+        .topicos_conteudo {
+            width: 71%;
+            padding-left: 45px;
+        }
+
+        .div_video {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100%;
+        }
+
+        .videos {
+            width: 75%;
+            height: 550px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 0px 3px black;
+        }
+
+        .div_img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 100%;
+        }
+
+        .imgs {
+            width: 92.5%;
+            height: 100%;
+            object-fit: fill;
+            box-shadow: 0px 0px 4px black;
+            cursor: zoom-in;
+            transition-duration: .2s;
+        }
+
+        .imgs:hover {
+            box-shadow: 0px 0px 10px gray;
+            opacity: .9;
+        }
+
+        .listas {
+            padding: 10px;
+            padding-left: 30px;
+            text-decoration: none;
+        }
+
+        .div_video,
+        .div_img,
+        .topicos_conteudo {
+            margin-bottom: 18px;
+        }
+
+        .line {
+            position: relative;
+            top: 2px;
+            color: black;
+            width: 85%;
+            opacity: .5;
+            border: 1px solid;
+        }
+
+        #simulado {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 20px;
+            width: 750px;
+            /* min-height: 368px; */
+            min-height: 340px;
+            padding: 50px;
+            background-color: rgba(189, 189, 189, 0.118);
+        }
+
+        .questao {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            letter-spacing: -1px;
+            font-size: 25px;
+        }
+
+        .questao.res {
+            font-size: 22px;
+        }
+
+        .respostas {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 15px;
+            padding-left: 30px;
+            width: 50%;
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .respostas span {
             cursor: pointer;
+            transition-duration: .2s;
+        }
+
+        .respHover {
+            transform-origin: left;
+            transform: scale(1.1);
+            color: rgb(0, 162, 255);
+        }
+
+        #proxQuestao {
+            visibility: hidden;
+            position: absolute;
+            bottom: 5%;
+            right: 4%;
+            font-weight: bold;
+            padding: 8px;
+            padding-left: 25px;
+            padding-right: 25px;
+            border: none;
+            border-radius: 25px;
+            color: rgb(181, 181, 181);
+            background-color: rgba(212, 212, 212, 0.692);
+            transition-duration: .2s;
+            cursor: pointer;
+        }
+
+        #proxQuestao:hover {
+            background-color: rgb(212, 212, 212);
         }
 
         a {
@@ -247,72 +292,226 @@
         }
 
         .tutorial {
-            /* text-decoration: underline;
-            text-decoration-color: greenyellow;
-            text-underline-position: under; */
+            width: 70%;
+            font-size: 35px;
             font-weight: bold;
         }
+        
     </style>
 
+    <script src="banco/etapas.js"></script>
+    <script src="simulado/questionarioEtapa1.js"></script>
+
+    <script>
+        var correcao, questao = 0, pontos = 0;
+        document.addEventListener('DOMContentLoaded', function () {
+            loadEtapa();
+            loadQuest();
+            document.querySelector('#proxQuestao').addEventListener('click', loadQuest);
+            document.querySelectorAll('.imgs').forEach(elem => {
+                elem.addEventListener('mousemove', function (e) {
+                    let x = e.pageX - e.target.offsetLeft;
+                    let y = e.pageY - e.target.offsetTop;
+                    this.style.transformOrigin = `${x}px ${y}px`;
+                    this.style.transform = 'scale(1.2)';
+                });
+                elem.addEventListener('mouseout', function (e) {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+        function loadEtapa() {
+            let divConteudo = document.querySelector('.conteudo');
+            let cont = 0;
+            let etp = location.search.replace('?', '').split('=')[1];
+            let montaHTML = etapas[`etapa${etp}`].split('#*');
+            for (let i = 0; i < montaHTML.length; i++) {
+                montaHTML[i] = montaHTML[i].replace(/\n/g, '').trim().replace(/\s{2,}/g, '');
+            }
+            for (let i = 0; i < montaHTML.length; i++) {
+                let topico = montaHTML[i].split('topico:');
+                let subtopico = montaHTML[i].split('subtopico:');
+                let video = montaHTML[i].split('video:');
+                let lista = montaHTML[i].split('lista:');
+                let imagem = montaHTML[i].split('imagem:');
+
+                if (topico[0] == '' && i == 0) {
+                    let span = document.createElement('span');
+                    span.classList = 'topicos';
+                    span.textContent = topico[1];
+                    divConteudo.insertAdjacentElement('afterbegin', span);
+                }
+                if (topico[0] == '' && i > 0) {
+                    let span = document.createElement('span');
+                    span.classList = 'topicos';
+                    span.textContent = topico[1];
+                    divConteudo.children[cont].insertAdjacentElement('afterend', span);
+                    cont += 1;
+                }
+                if (subtopico[0] == '' && i > 0) {
+                    let span = document.createElement('span');
+                    span.classList = 'topicos_conteudo';
+                    span.innerHTML = subtopico[1].split('lista:')[0];
+
+                    if (lista[1]) {
+                        let ul = document.createElement('ul');
+                        ul.classList = 'listas';
+                        let lis = lista[1].split('%');
+                        for (let x = 0; x < lis.length; x++) {
+                            ul.innerHTML += '<li>' + lis[x] + '</li>';
+                        }
+                        span.appendChild(ul);
+                    }
+
+                    divConteudo.children[cont].insertAdjacentElement('afterend', span);
+                    cont += 1;
+                }
+                if (video[0] == '' && i > 0) {
+                    let div = document.createElement('div');
+                    div.classList = 'div_video';
+                    let iframe = document.createElement('iframe');
+                    iframe.classList = 'videos';
+                    iframe.src = video[1];
+                    div.appendChild(iframe);
+                    divConteudo.children[cont].insertAdjacentElement('afterend', div);
+                    cont += 1;
+                }
+                if (imagem[0] == '' && i > 0) {
+                    let div = document.createElement('div');
+                    div.classList = 'div_img';
+                    let img = document.createElement('img');
+                    img.classList = 'imgs';
+                    img.src = imagem[1];
+                    div.appendChild(img);
+                    divConteudo.children[cont].insertAdjacentElement('afterend', div);
+                    cont += 1;
+                }
+
+                if (topico[0] != '' && subtopico[0] != ''
+                    && video[0] != '' && imagem[0] != '' && i > 0) {
+                    let span = document.createElement('span');
+                    span.textContent = subtopico[0];
+                    divConteudo.children[cont].appendChild(span);
+                }
+
+            }
+        }
+
+        function loadQuest() {
+            document.querySelectorAll('.respostas span').forEach(elem => {
+                elem.addEventListener('mouseenter', addClass);
+                elem.addEventListener('mouseout', removeClass);
+                elem.addEventListener('click', respostaSelecionada);
+                elem.classList = '';
+                elem.style.color = '';
+                elem.style.cursor = 'pointer';
+            });
+            document.querySelector('#resultado').innerHTML = '';
+            document.querySelector('#resultado').style.color = 'unset';
+            document.querySelector('#proxQuestao').style.visibility = 'hidden';
+
+            if (questao > (questionario.length - 1)) {
+                document.querySelector('#proxQuestao').removeEventListener('click', loadQuest);
+                document.querySelector('#simulado').style.justifyContent = 'center';
+                document.querySelector('#simulado').style.alignItems = 'center';
+
+                let media = (pontos < (questionario.length / 2) ? 'color: red;' : 'color: green;');
+                media += 'font-size: 30px';
+
+                document.querySelector('#simulado').innerHTML = `
+                    <span class='questao'>Simulado - Resultado:&nbsp
+                        <span style='${media}'> ${pontos} </span>&nbspde ${questionario.length} 
+                    </span>
+                `;
+                return;
+            }
+
+            document.querySelector('.questao').textContent = questionario[questao].questao;
+            document.querySelector('#a').textContent = questionario[questao].a;
+            document.querySelector('#b').textContent = questionario[questao].b;
+            document.querySelector('#c').textContent = questionario[questao].c;
+            document.querySelector('#d').textContent = questionario[questao].d;
+            correcao = questionario[questao].resposta;
+            questao += 1;
+        }
+
+        function respostaSelecionada() {
+            let resp = this.textContent.split(')')[0].trim();
+            this.classList = 'respHover';
+            document.querySelectorAll('.respostas span').forEach(el => {
+                el.removeEventListener('mouseenter', addClass);
+                el.removeEventListener('mouseout', removeClass);
+                el.removeEventListener('click', respostaSelecionada);
+                el.style.cursor = 'default';
+            });
+
+            if (resp === correcao) {
+                this.style.color = 'green';
+                document.querySelector('#resultado').style.color = 'green';
+                document.querySelector('#resultado').textContent = 'Acertou!';
+                pontos += 1;
+            } else {
+                this.style.color = 'red';
+                document.querySelector('#resultado').innerHTML = `
+                    <span style='color:red; font-size: 25px'>Errado!</span> <br>
+                    Resposta correta: Letra ${correcao}
+                `;
+            }
+            document.querySelector('#proxQuestao').style.visibility = 'visible';
+        }
+
+        function addClass() {
+            this.classList = 'respHover';
+        }
+
+        function removeClass() {
+            this.classList = '';
+        }
+    </script>
 </head>
 
 <body>
     <div id="menu">
         <span id="logo"></span>
-        <span id="titulo"> Treinamento </span>
-        <a class="link" href="index.html" id="botao"><button type="button" class="btn btn-outline-dark"
-                id="botaoVolta">Voltar</button></a>
+        <span id="titulo">Treinamento</span>
+        <a href="index.html"><button id="voltar"> Voltar </button></a>
     </div>
-
     <div id="tudo">
-        <div class="content" style="font-family:'Inter', sans-serif;">
-            <!-- <iframe width="1255" height="370" src="https://www.youtube.com/embed/Yvw60m0E9D8">
-            </iframe> -->
-            <p>
-                <strong>Formatando Os Campos Do Formulario</strong>
-            </p>
-            <br><br>
-            <p>
-                <strong>Primeiro Passo:</strong>
-            </p>
-            Impedir que os seguintes campos sejam gravados sem o devido preenchimento: Nome, CPF e data de nascimento.
-            Os campos devem ficar na cor amarela para indicar que são campos obrigatórios utilizando a classe
-            "required".
-            <br><br>
-            <p>
-                <strong>Segundo Passo:</strong>
-            </p>
-            Apresentar na tela a idade do funcionário de acordo com a data de nascimento. 
-            O campo idade deverá ficar na cor cinza indicando que está bloqueado, usando "readonly" como classe 
-            e atributo.
-            <br><br>
-            <p>
-                <strong>Terceiro Passo:</strong>
-            </p> Validar a data de nascimento do funcionário. Não permitindo informar uma data futura
-            ou inexistente como: "27/10/2077" ou "99/99/1234".
-            <br><br>
-            <p>
-                <strong>Quarto Passo:</strong>
-            </p>
-            Aceitar somente CPF válidos e verificar se o CPF já
-            foi cadastrado no sistema além de não permitir 2 funcionários com o mesmo CPF.
-            <br><br>
-            <div class="tutorial">Tutoriais Úteis:</div>
-            <a href="https://dev.to/elisangelamsilva/validacao-e-formatacao-de-campos-e-dados-com-html-e-javascript-3l9g">
-                Este link apresenta verifações por meio de expressões regulares, porém é possivél encontrar diversas validações de CPF e data de nascimento pela web.
-            </a><br><br>
+        <div id="etapa">
+            <div id="titulo_etapa">
+                <span> Início </span>
+            </div>
+            <hr class="line">
+            <div class="conteudo"><hr style="left: 7%;" class="line"><br>
+                <span class="topicos">
+                    Simulado
+                </span>
+                <span class="topicos_conteudo">
+                    <div id="simulado">
+                        <span class="questao"></span>
+                        <div class="respostas">
+                            <span id="a"></span>
+                            <span id="b"></span>
+                            <span id="c"></span>
+                            <span id="d"></span>
+                        </div>
+                        <span id="resultado" class="questao res"></span>
+                        <button id="proxQuestao">▶</button>
+                    </div>
+                </span>
+                <hr style="left: 7%;" class="line"><br>
+                <div class="conteudo">
+                    <div class="tutorial">Tutoriais Úteis:<br><br></div>
+                    <a href="https://cursos.alura.com.br/forum/topico-por-que-usar-o-readonly-na-declaracao-53492">
+                        Por que utilizar o Readonly?
+                    </a><br>
+                    <a href="https://www.devmedia.com.br/validar-cpf-com-javascript/23916">
+                        Como validar CPF (Javascript)
+                    </a><br>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <script>
-        function voltar() {
-            $(location).attr('href', 'index.html');
-        }
-
-        $("#botaoVolta").on("click", function () {
-            voltar();
-        });
-    </script>
 </body>
 
 </html>

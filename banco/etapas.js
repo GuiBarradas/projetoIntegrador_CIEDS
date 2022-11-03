@@ -43,11 +43,38 @@ var etapas =
         topico:3 - Construir tela individual para o filtro
         #*
         subtopico:Construir uma tela de filtro apresentando: 
-        lista:Nome, data de nascimento, ativo e CPF.
-        <br>
+        lista:Nome %Data de Nascimento %Ativo %CPF
+        <br><br>
         (Na tela de filtro deverá ser possível pesquisar por nome, ativo, CPF e data de nascimento).
         #*
         imagem:assets/etapa2.png
-    `
+    `,
+       etapa3:
+       `
+       topico:1 - Formatando os campos do Formulário:
+       #*
+       subtopico: Impedir que os seguintes campos sejam gravados sem o devido preenchimento: 
+       lista:Nome %CPF %Data de Nascimento. <br><br>
+       Os campos devem ficar na cor amarela para indicar que são campos obrigatórios utilizando a classe <mark>required</mark>.
+       #*
+       video:https://www.youtube.com/embed/uvzFT-TCVFM
+       #*
+       topico:2 - Apresentar a idade do funcionário de acordo com a data de nascimento
+       #*
+       subtopico: O campo idade deverá ficar na cor cinza indicando que está bloqueado, usando <mark>readonly</mark> como classe e atributo.
+       #*
+       topico:3 - Validar a data de nascimento do funcionário
+       #*
+       subtopico: Não permitir que seja informado uma data futura ou inexistente como: "27/10/2077" ou "99/99/1234".
+       <br>
+       #*
+       topico:4 - Validar o CPF
+       #*
+       subtopico: Aceitar apenas CPFs válidos e verificar se o mesmo já foi registrado previamente em nosso sistema.<br>
+       Não permitir 2 funcionários distintos com o mesmo CPF.
+       #*
+       imagem:assets/etapa3.png
+
+       `
         
     }
