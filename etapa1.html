@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,11 +76,12 @@
 
         #voltar{
             position: absolute;
-            right: 2%;
             top: 23%;
+            right: 2%;
             width: 100px;
             height: 45px;
             font-family: 'Inter', sans-serif;
+            outline: none;
             cursor: pointer;
         }
         #voltar hover {
@@ -233,13 +234,15 @@
         }
     </style>
 
+    <script src="banco/etapas.js"></script>
+    <script src="simulado/questionarioEtapa1.js"></script>
+
     <script>
-        var correcao = '';
+        var correcao, questao = 0, pontos = 0;
         document.addEventListener('DOMContentLoaded', function(){
+            loadEtapa();
             loadQuest();
-            document.querySelector('#proxQuestao').addEventListener('click', function(){
-                loadQuest();
-            });
+            document.querySelector('#proxQuestao').addEventListener('click', loadQuest);
             document.querySelectorAll('.imgs').forEach(elem => {
                 elem.addEventListener('mousemove', function(e){
                     let x = e.pageX - e.target.offsetLeft;
@@ -253,11 +256,88 @@
             });
         });
 
+        function loadEtapa(){
+            let divConteudo = document.querySelector('.conteudo');
+            let cont = 0;
+            let etp = location.search.replace('?', '').split('=')[1];
+            let montaHTML = etapas[`etapa${etp}`].split('#*');
+            for (let i = 0; i < montaHTML.length; i++) {
+                montaHTML[i] = montaHTML[i].replace(/\n/g, '').trim().replace(/\s{2,}/g, '');
+            }
+            for (let i = 0; i < montaHTML.length; i++) {
+                let topico = montaHTML[i].split('topico:');
+                let subtopico = montaHTML[i].split('subtopico:');
+                let video = montaHTML[i].split('video:');
+                let lista = montaHTML[i].split('lista:');
+                let imagem = montaHTML[i].split('imagem:');
+
+                if(topico[0] == '' && i == 0){
+                    let span = document.createElement('span');
+                    span.classList = 'topicos';
+                    span.textContent = topico[1];
+                    divConteudo.insertAdjacentElement('afterbegin', span);
+                }
+                if(topico[0] == '' && i > 0){
+                    let span = document.createElement('span');
+                    span.classList = 'topicos';
+                    span.textContent = topico[1];
+                    divConteudo.children[cont].insertAdjacentElement('afterend', span);
+                    cont += 1;
+                }
+                if(subtopico[0] == '' && i > 0){
+                    let span = document.createElement('span');
+                    span.classList = 'topicos_conteudo';
+                    span.innerHTML = subtopico[1].split('lista:')[0];
+
+                    if(lista[1]){
+                        let ul = document.createElement('ul');
+                        ul.classList = 'listas';
+                        let lis = lista[1].split('%');
+                        for (let x = 0; x < lis.length; x++) {
+                            ul.innerHTML += '<li>'+lis[x]+'</li>';
+                        }
+                        span.appendChild(ul);
+                    }
+
+                    divConteudo.children[cont].insertAdjacentElement('afterend', span);
+                    cont += 1;
+                }
+                if(video[0] == '' && i > 0){
+                    let div = document.createElement('div');
+                    div.classList = 'div_video';
+                    let iframe = document.createElement('iframe');
+                    iframe.classList = 'videos';
+                    iframe.src = video[1];
+                    div.appendChild(iframe);
+                    divConteudo.children[cont].insertAdjacentElement('afterend', div);
+                    cont += 1;
+                }
+                if(imagem[0] == '' && i > 0){
+                    let div = document.createElement('div');
+                    div.classList = 'div_img';
+                    let img = document.createElement('img');
+                    img.classList = 'imgs';
+                    img.src = imagem[1];
+                    div.appendChild(img);
+                    divConteudo.children[cont].insertAdjacentElement('afterend', div);
+                    cont += 1;
+                }
+
+                if(topico[0] != '' && subtopico[0] != ''
+                && video[0] != '' && imagem[0] != '' && i > 0){
+                    let span = document.createElement('span');
+                    span.textContent = subtopico[0];
+                    divConteudo.children[cont].appendChild(span);
+                }
+
+            }
+        }
+
         function loadQuest(){
             document.querySelectorAll('.respostas span').forEach(elem =>{
                 elem.addEventListener('mouseenter', addClass);
                 elem.addEventListener('mouseout', removeClass);
-                elem.addEventListener('click', selecionaResposta);
+                elem.addEventListener('click', respostaSelecionada);
                 elem.classList = '';
                 elem.style.color = '';
                 elem.style.cursor = 'pointer';
@@ -266,21 +346,38 @@
             document.querySelector('#resultado').style.color = 'unset';
             document.querySelector('#proxQuestao').style.visibility = 'hidden';
 
-            document.querySelector('.questao').textContent = '1) Qual o comando utilizado para a criação de tabelas?';
-            document.querySelector('#a').textContent = 'A - ALTER TABLE';
-            document.querySelector('#b').textContent = 'B - ALTER COLUMN';
-            document.querySelector('#c').textContent = 'C - CREATE TABLE';
-            document.querySelector('#d').textContent = 'D - CREATE DATABASE';
-            correcao = 'C';
+            if(questao > (questionario.length - 1)){
+                document.querySelector('#proxQuestao').removeEventListener('click', loadQuest);
+                document.querySelector('#simulado').style.justifyContent = 'center';
+                document.querySelector('#simulado').style.alignItems = 'center';
+
+                let media = (pontos < (questionario.length/2) ? 'color: red;' : 'color: green;');
+                media += 'font-size: 30px';
+
+                document.querySelector('#simulado').innerHTML = `
+                    <span class='questao'>Simulado - Resultado:&nbsp
+                        <span style='${media}'> ${pontos} </span>&nbspde ${questionario.length} 
+                    </span>
+                `;
+                return;
+            }
+
+            document.querySelector('.questao').textContent = questionario[questao].questao;
+            document.querySelector('#a').textContent = questionario[questao].a;
+            document.querySelector('#b').textContent = questionario[questao].b;
+            document.querySelector('#c').textContent = questionario[questao].c;
+            document.querySelector('#d').textContent = questionario[questao].d;
+            correcao = questionario[questao].resposta;
+            questao += 1;
         }
 
-        function selecionaResposta(){
-            let resp = this.textContent.split('-')[0].trim();
+        function respostaSelecionada(){
+            let resp = this.textContent.split(')')[0].trim();
             this.classList = 'respHover';
             document.querySelectorAll('.respostas span').forEach(el => {
                 el.removeEventListener('mouseenter', addClass);
                 el.removeEventListener('mouseout', removeClass);
-                el.removeEventListener('click', selecionaResposta);
+                el.removeEventListener('click', respostaSelecionada);
                 el.style.cursor = 'default';
             });
 
@@ -288,6 +385,7 @@
                 this.style.color = 'green';
                 document.querySelector('#resultado').style.color = 'green';
                 document.querySelector('#resultado').textContent = 'Acertou!';
+                pontos += 1;
             }else{
                 this.style.color = 'red';
                 document.querySelector('#resultado').innerHTML = `
@@ -311,7 +409,7 @@
     <div id="menu">
         <span id="logo"></span>
         <span id="titulo"> Etapa 1 </span>
-        <a href="index.html"><button id="voltar">Voltar</button></a>
+        <a href="index.html"><button id="voltar"> Voltar </button></a>
     </div>
     <div id="tudo">
         <div id="etapa">
@@ -320,43 +418,45 @@
             </div>
             <hr class="line">
             <div class="conteudo">
-                <span class="topicos">
-                    1 - Criar uma Database no SQL Server
-                </span>
-                <span class="topicos_conteudo">
-                    Para o desenvolvimento de toda a aplicação precisaremos da criação
-                    de um banco de dados e a ferramento que iremos utilizar para essa tarefa
-                    será o SQL Server. <br>
-                </span>
-                <div class="div_video">
-                    <iframe src="https://www.youtube.com/embed/4TfJQussrvs" class="videos"></iframe>
-                </div>
-                <span class="topicos_conteudo">
-                    Após o vídeo ser assistido, crie uma tabela no Database feito anteriormente com as seguintes colunas:
-                    <br>
-                    <ul class="listas">
-                        <li>Código(PK - “chave primária")</li>
-                        <li>Nome</li>
-                        <li>Ativo</li>
-                        <li>CPF</li>
-                        <li>Data de nascimento</li>
-                    </ul>
-                    Obs: (Os campos não devem possuir acentos ou espaçamentos
-                    no SQL Server e nem nas variáveis usadas no sistema)
-                </span>
+                <!-- <fleurins>
+                    <span class="topicos">
+                        1 - Criar uma Database no SQL Server
+                    </span>
+                    <span class="topicos_conteudo">
+                        Para o desenvolvimento de toda a aplicação precisaremos da criação
+                        de um banco de dados e a ferramento que iremos utilizar para essa tarefa
+                        será o SQL Server. <br>
+                    </span>
+                    <div class="div_video">
+                        <iframe src="https://www.youtube.com/embed/4TfJQussrvs" class="videos"></iframe>
+                    </div>
+                    <span class="topicos_conteudo">
+                        Após o vídeo ser assistido, crie uma tabela no Database feito anteriormente com as seguintes colunas:
+                        <br>
+                        <ul class="listas">
+                            <li>Código(PK - “chave primária")</li>
+                            <li>Nome</li>
+                            <li>Ativo</li>
+                            <li>CPF</li>
+                            <li>Data de nascimento</li>
+                        </ul>
+                        Obs: (Os campos não devem possuir acentos ou espaçamentos
+                        no SQL Server e nem nas variáveis usadas no sistema)
+                    </span>
 
-                <span class="topicos">
-                    2 - Desenvolver o Protótipo na Tela
-                </span>
-                <span class="topicos_conteudo">
-                    Fazer o protótipo na tela com os mesmos campos criados na tabela do SQL Server
-                    <br>
-                    CPF e Data nascimento devem ter suas respectivas máscaras de campos para
-                    facilitar o preenchimento e evitar erros.
-                </span>
-                <div class="div_img">
-                    <img src="assets/etapa1.png" alt="" class="imgs">
-                </div>
+                    <span class="topicos">
+                        2 - Desenvolver o Protótipo na Tela
+                    </span>
+                    <span class="topicos_conteudo">
+                        Fazer o protótipo na tela com os mesmos campos criados na tabela do SQL Server
+                        <br>
+                        CPF e Data nascimento devem ter suas respectivas máscaras de campos para
+                        facilitar o preenchimento e evitar erros.
+                    </span>
+                    <div class="div_img">
+                        <img src="assets/etapa1.png" alt="" class="imgs">
+                    </div>
+                </fleurins> -->
 
                 <span class="topicos">
                     Fim - Simulado
@@ -374,18 +474,6 @@
                         <button id="proxQuestao">▶</button>
                     </div>
                 </span>
-                <!-- <span class="topicos_conteudo">
-                    <div id="simulado">
-                        <span class="questao">1) Qual o comando utilizado para a criação de tabelas?</span>
-                        <div class="respostas">
-                            <span id="a">A - ALTER TABLE</span>
-                            <span id="b">B - ALTER COLUMN</span>
-                            <span id="c">C - CREATE TABLE</span>
-                            <span id="d">D - CREATE DATABASE</span>
-                        </div>
-                        <span id="resultado" class="questao res">Resposta correta: </span>
-                    </div>
-                </span> -->
             </div>
         </div>
     </div>
