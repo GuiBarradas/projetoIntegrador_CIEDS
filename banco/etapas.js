@@ -75,6 +75,27 @@ var etapas =
        #*
        imagem:assets/etapa3.png
 
+       `,
+
+       etapa4:
        `
+       topico:1 - Adicionando novos campos:
+       #*
+       subtopico: Incluir no cadastro do funcionário o RG (Com máscara e validação) e o sexo cadastrado em uma tabela <mark><b>SEPARADA</b></mark> no banco de dados como <a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426"><b>FK (Chave Estrangeira)</b></a>.
+       #*
+       video:https://www.youtube.com/embed/l7h1YmgXXgw
+       #*
+       topico:2 - Criação do campo "Estado Civil"
+       #*
+       subtopico: O campo deverá ser uma <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/select"> <b>Combo Box</b> </a>.
+       #*
+       topico:3 - Criar parâmetros de filtragem
+       #*
+       subtopico: No filtro de cadastro criar parâmetro a partir de Data de Nascimento <b>inicial</b> e <b>final</b>.
+       <br>
+       #*
+       imagem:assets/etapa4.png
+    
+       `,
         
     }
