@@ -33,7 +33,8 @@ var etapas =
         #*
         video:https://www.youtube.com/embed/1SOk2p1peLo
         #*
-        Obs: (Há um modelo pronto de procedure que segue o padrão da empresa disponibilizado em nosso servidor do Discord na aba "exemplos-iniciais")
+        subtopico:
+        Obs: Há um modelo de procedure que segue o padrão da empresa disponibilizado em nosso servidor do Discord na aba "exemplos-iniciais"
         #*
         topico:2 - Filtrar os dados e exclusão lógica
         #*
@@ -41,9 +42,10 @@ var etapas =
         #*
         topico:3 - Construir tela individual para o filtro
         #*
-        subtopico:Construir uma tela de filtro apresentando: Nome, data de nascimento, ativo e CPF.
+        subtopico:Construir uma tela de filtro apresentando: 
+        lista:Nome, data de nascimento, ativo e CPF.
         <br>
-        Na tela de filtro deverá ser possível pesquisar por nome, ativo, CPF e data de nascimento.
+        (Na tela de filtro deverá ser possível pesquisar por nome, ativo, CPF e data de nascimento).
         #*
         imagem:assets/etapa2.png
     `
