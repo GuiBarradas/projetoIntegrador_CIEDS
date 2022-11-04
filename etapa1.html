@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etapa 1</title>
+    <title>Treinamento</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
@@ -344,6 +344,7 @@
                 let video = montaHTML[i].split('video:');
                 let lista = montaHTML[i].split('lista:');
                 let imagem = montaHTML[i].split('imagem:');
+                let tutorial = montaHTML[i].split('tutorial:');
 
                 if (topico[0] == '' && i == 0) {
                     let span = document.createElement('span');
@@ -396,8 +397,11 @@
                     divConteudo.children[cont].insertAdjacentElement('afterend', div);
                     cont += 1;
                 }
+                if (tutorial[0] == '' && i > 0) {
+                    document.querySelector('.topicos_conteudo.tut').innerHTML = tutorial[1];
+                }
 
-                if (topico[0] != '' && subtopico[0] != ''
+                if (topico[0] != '' && subtopico[0] != '' && tutorial[0] != ''
                     && video[0] != '' && imagem[0] != '' && i > 0) {
                     let span = document.createElement('span');
                     span.textContent = subtopico[0];
@@ -514,14 +518,15 @@
                 <span class="topicos" style="width: max-content;">
                     <div class="tutorial">Tutoriais Úteis:</div>
                 </span>
-                <span class="topicos_conteudo">
-                    <a href="https://www.devmedia.com.br/criando-tabelas-usando-o-sql-server-management-studio/17425">
+                <span class="topicos_conteudo tut">
+                    <!-- <a href="https://www.devmedia.com.br/criando-tabelas-usando-o-sql-server-management-studio/17425">
                         Criando Tabelas em SQL.
                     </a>
                     <br>
                     <a href="http://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/mascaras-forms/">
                         Colocando Máscaras nos campos do formulario.
-                    </a><br>
+                    </a>
+                    <br> -->
                 </span>
             </div>
         </div>
