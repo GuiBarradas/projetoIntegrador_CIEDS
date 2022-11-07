@@ -97,5 +97,57 @@ var etapas =
        imagem:assets/etapa4.png
     
        `,
+
+       etapa5:
+       `
+       topico:1 - Criar um accordion para contato
+       #*
+       subtopico: Dentro deste novo <a href="https://learn.microsoft.com/en-us/fluent-ui/web-components/components/accordion>accordion</a> terão duas listas: Uma para telefone e
+       outra para email.
+       #*
+       video:https://www.youtube.com/embed/A5TdJZhkd30
+       #*
+       topico:2 - Formatação da lista:
+       #*
+       subtopico: Deverá ser possível adicionar e remover itens os na lista e, ao clicar nos hiperlinks da lista, os dados
+       deverão voltar aos seus respectivos campos para que possíveis alterações possam ser realizadas.
+       #*
+       topico:3 - Tabela FK (Foreign Key - Chave Estrangeira)
+       #*
+       subtopico: Quando gravar, a tela deverá salvar todos os itens (Caso existam) na lista em uma tabela filha, referenciando a tabela pai e
+       vincular-la como <a href="https://www.w3schools.com/sql/sql_foreignkey.asp"FK (Foreign Key)</a> e, ao recuperar, todos os dados da lista devem ser
+       preenchidos.
+       #*
+       topico:4 - Validação
+       #*
+       subtopico: Validar os itens em ambas as listas, não permitindo 2
+       telefones ou emails iguais, também não permitir 2 itens principais
+       na lista. Ex: 2 telefones principais.
+       #*
+       <br>
+       imagem:assets/etapa5.png
+    
+       `,
+       
+       etapa6:
+       `
+       topico:1 - Adicionando novos campos:
+       #*
+       subtopico: Incluir no cadastro do funcionário o RG (Com máscara e validação) e o sexo cadastrado em uma tabela <mark><b>SEPARADA</b></mark> no banco de dados como <a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426"><b>FK (Chave Estrangeira)</b></a>.
+       #*
+       video:https://www.youtube.com/embed/l7h1YmgXXgw
+       #*
+       topico:2 - Criação do campo "Estado Civil"
+       #*
+       subtopico: O campo deverá ser uma <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/select"> <b>Combo Box</b> </a>.
+       #*
+       topico:3 - Criar parâmetros de filtragem
+       #*
+       subtopico: No filtro de cadastro criar parâmetro a partir de Data de Nascimento <b>inicial</b> e <b>final</b>.
+       <br>
+       #*
+       imagem:assets/etapa4.png
+    
+       `,
         
     }
