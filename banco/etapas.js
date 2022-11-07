@@ -102,8 +102,7 @@ var etapas =
        `
        topico:1 - Criar um accordion para contato
        #*
-       subtopico: Dentro deste novo <a href="https://learn.microsoft.com/en-us/fluent-ui/web-components/components/accordion>accordion</a> terão duas listas: Uma para telefone e
-       outra para email.
+       subtopico: Dentro deste novo <a href="https://learn.microsoft.com/en-us/fluent-ui/web-components/components/accordion">accordion</a> terão duas listas: Uma para telefone e outra para email.
        #*
        video:https://www.youtube.com/embed/A5TdJZhkd30
        #*
@@ -115,7 +114,7 @@ var etapas =
        topico:3 - Tabela FK (Foreign Key - Chave Estrangeira)
        #*
        subtopico: Quando gravar, a tela deverá salvar todos os itens (Caso existam) na lista em uma tabela filha, referenciando a tabela pai e
-       vincular-la como <a href="https://www.w3schools.com/sql/sql_foreignkey.asp"FK (Foreign Key)</a> e, ao recuperar, todos os dados da lista devem ser
+       vincular-la como <a href="https://www.w3schools.com/sql/sql_foreignkey.asp">FK (Foreign Key)</a> e, ao recuperar, todos os dados da lista devem ser
        preenchidos.
        #*
        topico:4 - Validação
@@ -144,8 +143,8 @@ var etapas =
        topico:3 - Criar parâmetros de filtragem
        #*
        subtopico: No filtro de cadastro criar parâmetro a partir de Data de Nascimento <b>inicial</b> e <b>final</b>.
-       <br>
        #*
+       <br>
        imagem:assets/etapa4.png
     
        `,
