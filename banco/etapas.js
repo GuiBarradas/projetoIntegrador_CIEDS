@@ -123,29 +123,42 @@ var etapas =
        telefones ou emails iguais, também não permitir 2 itens principais
        na lista. Ex: 2 telefones principais.
        #*
-       <br>
        imagem:assets/etapa5.png
     
        `,
        
        etapa6:
        `
-       topico:1 - Adicionando novos campos:
+       topico:1 - Criar um novo accordion para endereço
        #*
-       subtopico: Incluir no cadastro do funcionário o RG (Com máscara e validação) e o sexo cadastrado em uma tabela <mark><b>SEPARADA</b></mark> no banco de dados como <a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426"><b>FK (Chave Estrangeira)</b></a>.
+       subtopico: Deverá ter os seguintes campos: 
+       lista: CEP %Logradouro %Número %Complemento %UF %Bairro
+       %Cidade<br><br>
+       <b>OBS</b>: Gravar e recuperar esses campos (Na mesma tabela)</i>
        #*
-       video:https://www.youtube.com/embed/l7h1YmgXXgw
+       topico:2 - CEP API
        #*
-       topico:2 - Criação do campo "Estado Civil"
+       subtopico: Implementar funcionalidade de busca por CEP, preenchendo todos os dados do endereço de forma automática, através do consumo de uma <a href="https://www.techtudo.com.br/listas/2020/06/o-que-e-api-e-para-que-serve-cinco-perguntas-e-respostas.ghtml"><b>API</b></a>
        #*
-       subtopico: O campo deverá ser uma <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/select"> <b>Combo Box</b> </a>.
+       topico:3 - Criar uma nova tela de "Tipo de Dependente"
        #*
-       topico:3 - Criar parâmetros de filtragem
+       subtopico: Criar uma nova tela <mark><b>SEPARADA</b></mark> incluindo os seguintes campos:
+       lista: Código %Descrição %Ativo
+       <br><br>
+       <b>OBS</b>: Adicionar todas as funcionalidades previamente utilizadas (Gravar, excluir e recuperar).
        #*
-       subtopico: No filtro de cadastro criar parâmetro a partir de Data de Nascimento <b>inicial</b> e <b>final</b>.
+       topico:4 - Fazer o filtro para Dependentes
        #*
-       <br>
-       imagem:assets/etapa4.png
+       subtopico: Deverá ser possível pesquisar por ativo e descrição
+       #*
+       topico:5 - Novos campos:
+       #*
+       subtopico: Criar os respectivos campos:
+       lista: Primeiro emprego %PisPasep
+       <br><br>
+       <b>OBS</b>: O Campo "Primeiro Emprego" é obrigatório e, caso seja o primeiro emprego do candidato, não será necessário informar o "PisPasep", apagando quaisquer valores existentes nesse campo e desabilitando o mesmo (Readonly) e ao recuperar o cadastro, o sistema também deverá <b>bloquear</b> ou <b>liberar</b> os campos.
+       #*
+       imagem:assets/etapa6.png
     
        `,
         
