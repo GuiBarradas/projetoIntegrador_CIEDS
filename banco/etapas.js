@@ -161,5 +161,27 @@ var etapas =
        imagem:assets/etapa6.png
     
        `,
+
+       etapa7:
+       `
+       topico:1 - Montar um menu lateral por telas 
+       #*
+       subtopico: Cada tela deverá
+       pertencer ao seu menu e todos os itens da tela devem ser coerentes ao seu menu lateral (<b>config.ui.php</b>)
+       #*
+       topico:2 - Referenciação 
+       #*
+       subtopico: Na parte superior da página também precisará
+       estar referenciado, de forma correta, de acordo com o menu. (<b>Breadcrumbs</b>)
+       #*
+       topico:3 - Ponteiro
+       #*
+       subtopico: Adicionar um ponteiro no menu lateral mostrando ao usuário qual página ele <b>atualmente</b> está
+       <br><br>
+       <b>OBS</b>: Essas configurações precisam ser feitas em <mark><b>TODAS</b></mark> as telas.
+       #*
+       imagem:assets/etapa7.png
+    
+       `,
         
     }
