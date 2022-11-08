@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/icone.ico"/>
+    <link rel="icon" href="assets/icone.ico" />
 
     <style>
         * {
@@ -73,7 +73,7 @@
         }
 
         #titulo::after {
-            content: 'Etapa 6!';
+            content: 'Vamos lá!';
             position: absolute;
             top: 80%;
             left: 80.4%;
@@ -121,7 +121,7 @@
             justify-content: center;
             align-items: flex-start;
             align-self: flex-start;
-            gap: 20px;
+            gap: 15px;
             width: 100%;
             padding: 10px;
         }
@@ -292,9 +292,17 @@
         }
 
         .tutorial {
-            width: 70%;
+            position: relative;
             font-size: 35px;
-            font-weight: bold;
+        }
+        .tutorial::after{
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #cdfeaa;
         }
         
     </style>
@@ -325,6 +333,7 @@
             let divConteudo = document.querySelector('.conteudo');
             let cont = 0;
             let etp = location.search.replace('?', '').split('=')[1];
+            document.querySelector('#titulo').textContent = `Etapa ${etp}`;
             let montaHTML = etapas[`etapa${etp}`].split('#*');
             for (let i = 0; i < montaHTML.length; i++) {
                 montaHTML[i] = montaHTML[i].replace(/\n/g, '').trim().replace(/\s{2,}/g, '');
@@ -335,6 +344,7 @@
                 let video = montaHTML[i].split('video:');
                 let lista = montaHTML[i].split('lista:');
                 let imagem = montaHTML[i].split('imagem:');
+                let tutorial = montaHTML[i].split('tutorial:');
 
                 if (topico[0] == '' && i == 0) {
                     let span = document.createElement('span');
@@ -387,8 +397,11 @@
                     divConteudo.children[cont].insertAdjacentElement('afterend', div);
                     cont += 1;
                 }
+                if (tutorial[0] == '' && i > 0) {
+                    document.querySelector('.topicos_conteudo.tut').innerHTML = tutorial[1];
+                }
 
-                if (topico[0] != '' && subtopico[0] != ''
+                if (topico[0] != '' && subtopico[0] != '' && tutorial[0] != ''
                     && video[0] != '' && imagem[0] != '' && i > 0) {
                     let span = document.createElement('span');
                     span.textContent = subtopico[0];
@@ -399,6 +412,7 @@
         }
 
         function loadQuest() {
+            let etp = location.search.replace('?', '').split('=')[1];
             document.querySelectorAll('.respostas span').forEach(elem => {
                 elem.addEventListener('mouseenter', addClass);
                 elem.addEventListener('mouseout', removeClass);
@@ -411,28 +425,28 @@
             document.querySelector('#resultado').style.color = 'unset';
             document.querySelector('#proxQuestao').style.visibility = 'hidden';
 
-            if (questao > (questionario.length - 1)) {
+            if (questao > (questionario[`etapa${etp}`].length - 1)) {
                 document.querySelector('#proxQuestao').removeEventListener('click', loadQuest);
                 document.querySelector('#simulado').style.justifyContent = 'center';
                 document.querySelector('#simulado').style.alignItems = 'center';
 
-                let media = (pontos < (questionario.length / 2) ? 'color: red;' : 'color: green;');
+                let media = (pontos < (questionario[`etapa${etp}`].length / 2) ? 'color: red;' : 'color: green;');
                 media += 'font-size: 30px';
 
                 document.querySelector('#simulado').innerHTML = `
                     <span class='questao'>Simulado - Resultado:&nbsp
-                        <span style='${media}'> ${pontos} </span>&nbspde ${questionario.length} 
+                        <span style='${media}'> ${pontos} </span>&nbspde ${questionario[`etapa${etp}`].length} 
                     </span>
                 `;
                 return;
             }
 
-            document.querySelector('.questao').textContent = questionario[questao].questao;
-            document.querySelector('#a').textContent = questionario[questao].a;
-            document.querySelector('#b').textContent = questionario[questao].b;
-            document.querySelector('#c').textContent = questionario[questao].c;
-            document.querySelector('#d').textContent = questionario[questao].d;
-            correcao = questionario[questao].resposta;
+            document.querySelector('.questao').textContent = questionario[`etapa${etp}`][questao].questao;
+            document.querySelector('#a').textContent = questionario[`etapa${etp}`][questao].a;
+            document.querySelector('#b').textContent = questionario[`etapa${etp}`][questao].b;
+            document.querySelector('#c').textContent = questionario[`etapa${etp}`][questao].c;
+            document.querySelector('#d').textContent = questionario[`etapa${etp}`][questao].d;
+            correcao = questionario[`etapa${etp}`][questao].resposta;
             questao += 1;
         }
 
@@ -483,7 +497,7 @@
                 <span> Início </span>
             </div>
             <hr class="line">
-            <div class="conteudo"><hr style="left: 7%;" class="line"><br>
+            <div class="conteudo">
                 <span class="topicos">
                     Simulado
                 </span>
@@ -500,18 +514,20 @@
                         <button id="proxQuestao">▶</button>
                     </div>
                 </span>
-                <hr style="left: 7%;" class="line"><br>
-                <div class="conteudo">
+                <br><hr style="left: 7%;" class="line"><br>
+                <span class="topicos" style="width: max-content;">
                     <div class="tutorial">Tutoriais Úteis:</div>
-                </p>
-                <a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426#:~:text=Chave%20estrangeira%20(foreign%20key)%20%C3%A9,%C3%A0%20qual%20tabela%20est%C3%A1%20relacionada.">
-                    Breve Conceito de Foreign key.
-                </a>
-                
-                <a href="https://celke.com.br/artigo/como-criar-accordion-com-javascript-e-bootstrap">
-                    Como criar efeito accordion com JavaScript e Bootstrap.
-                </a><br>
-                </div>
+                </span>
+                <span class="topicos_conteudo tut">
+                    <a href="https://www.horadecodar.com.br/2020/02/19/como-bloquear-inputs-com-html-disabled-readonly/">
+                        Bloqueando inputs no HTML.
+                    </a>
+                    <br>
+                    <a href="https://nstecnologia.com.br/blog/viacep-como-consultar-cep/#:~:text=Para%20Consultar%20CEP%20basta%20voc%C3%AA,do%20Munic%C3%ADpio%2C%20UF%2C%20etc.">
+                        Como consultar CEP através da API do ViaCep.
+                    </a>
+                    <br>
+                </span>
             </div>
         </div>
 </body>
