@@ -184,4 +184,22 @@ var etapas =
     
        `,
         
+       etapa8:
+       `
+       topico:1 - Criar novo accordion para dependentes
+       #*
+       subtopico:  Na tela de cadastro de funcionário criar um novo accordion para dependentes, contendo uma lista grande com os seguintes campos:
+       lista: Nome %CPF %Data de Nascimento %Tipo Dependente (Da tela cadastrada anteriormente como <b>FK</b>)
+       #*
+       topico:2 - Validação
+       #*
+       subtopico: É necessário validar a lista, adicionar e realizar todos os processos feitos nas listas anteriores e também é preciso ver se o CPF do dependente é válido
+       #*
+       topico:3 - Validação - Tabelas Básicas
+       #*
+       subtopico: Nas tabelas básicas de <b>Sexo</b> e <b>Tipo Dependente</b> verificar se foi feita uma validação para impedir cadastrar dois nomes iguais para não haver duplicidade.
+       #*
+       imagem: assets/etapa8.png
+
+       `,
     }
