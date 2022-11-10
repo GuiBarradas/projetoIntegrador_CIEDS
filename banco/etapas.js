@@ -202,4 +202,42 @@ var etapas =
        imagem: assets/etapa8.png
 
        `,
+
+       etapa9:
+       `
+       topico:1 - PDF - Relatório Geral de Funcionários
+       #*
+       subtopico: No filtro de candidatos, criar um relatório geral de funcionários ativos utilizando a classe "<mark><b>FPDF</mark></b>" do PHP.
+       #*
+       video:https://youtu.be/embed/aLIz_qgk5z4
+       #*
+       topico:2 - Filtragem
+       #*
+       subtopico: A opção de filtragem poderá ser feita a partir do sexo ou estado civil; O objetivo do relatório é usar os dados do sistema para gerar alguma informação útil.
+       #*
+       topico:3 - Informações adicionais
+       #*
+       subtopico: O relatório deverá ser feito em PDF à partir dos exemplos que serão informados no Discord. Porém, cada um poderá usar a sua criatividade para preencher da melhor forma possível o PDF.
+       <br><br>
+       Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/u0mIPpz.png"><b>Clique Aqui</b></a>
+       #*
+       `,
+
+       etapa10:
+       `
+       topico:1 - PDF - Relatório Individual 
+       #*
+       subtopico: Criar um relatório individual para cada funcionário cadastrado
+       #*
+       topico:2 - Criação do botão "Relatório Contato"
+       #*
+       subtopico: Na aba de contato criar um botão que só deverá aparecer ao recuperar a tela de cadastro de funcionários
+       #*
+       topico:3 - Formatação da Tela
+       #*
+       subtopico: O primeiro botão deverá ficar localizado no footer da página, com o nome “Relatório Contato" e, ao clicar no botão, será gerado um relatório de dados de contato, com cabeçalho e trazendo às listas de contato do usuário apresentado na tela.
+       <br><br>
+       Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/LQanPS9.png"><b>Clique Aqui</b></a>
+       
+       `
     }
