@@ -4,9 +4,7 @@ var etapas =
         `
             topico:1 - Criar uma Database no SQL Server
             #*
-            subtopico:Para o desenvolvimento de toda a aplicação precisaremos da criação
-            de um banco de dados e a ferramento que iremos utilizar para essa tarefa
-            será o SQL Server. 
+            subtopico:Para o desenvolvimento de toda a aplicação precisaremos da criação de um banco de dados e a ferramento que iremos utilizar para essa tarefa será o SQL Server. 
             #*
             video:https://www.youtube.com/embed/4TfJQussrvs
             #*
