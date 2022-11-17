@@ -62,7 +62,8 @@ var etapas = {
         topico:1 - Formatando os campos do Formulário:
         #*
         subtopico: Impedir que os seguintes campos sejam gravados sem o devido preenchimento: 
-        lista:Nome %CPF %Data de Nascimento. <br><br>
+        lista:Nome %CPF %Data de Nascimento.
+        #*
         Os campos devem ficar na cor amarela para indicar que são campos obrigatórios utilizando a classe <mark>required</mark>.
         #*
         video:https://www.youtube.com/embed/uvzFT-TCVFM
@@ -83,8 +84,8 @@ var etapas = {
         #*
         imagem:assets/etapa3.png
         #*
-        tutorial:<a href="https://cursos.alura.com.br/forum/topico-por-que-usar-o-readonly-na-declaracao-53492">Por que utilizar o Readonly?</a>
-        <a href="http://www.linhadecodigo.com.br/artigo/2693/validando-campos-de-um-formulario-com-o-atributo-required.aspx">Validando campos de um formulário com o atributo required</a>
+        tutorial:<a href="https://cursos.alura.com.br/forum/topico-por-que-usar-o-readonly-na-declaracao-53492">Por que utilizar o Readonly?</a><br>
+        <a href="http://www.linhadecodigo.com.br/artigo/2693/validando-campos-de-um-formulario-com-o-atributo-required.aspx">Validando campos de um formulário com o atributo required</a><br>
         <a href="https://www.devmedia.com.br/validar-cpf-com-javascript/23916">Como validar CPF (Javascript)</a><br>
     `,
 
@@ -138,8 +139,7 @@ var etapas = {
        #*
        imagem:assets/etapa5.png
        #*
-       tutorial:<a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426#:~:text=Chave%20estrangeira%20(foreign%20key)%20%C3%A9,%C3%A0%20qual%20tabela%20est%C3%A1%20relacionada.">
-       Breve Conceito de Foreign key.</a><br>
+       tutorial:<a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426#:~:text=Chave%20estrangeira%20(foreign%20key)%20%C3%A9,%C3%A0%20qual%20tabela%20est%C3%A1%20relacionada.">Breve Conceito de Foreign key.</a><br>
        <a href="https://celke.com.br/artigo/como-criar-accordion-com-javascript-e-bootstrap">Como criar efeito accordion com JavaScript e Bootstrap.</a><br>
     `,
        
@@ -176,10 +176,8 @@ var etapas = {
        #*
        imagem:assets/etapa6.png
        #*
-       tutorial:<a href="https://www.horadecodar.com.br/2020/02/19/como-bloquear-inputs-com-html-disabled-readonly/">
-       Bloqueando inputs no HTML.</a><br>
-       <a href="https://nstecnologia.com.br/blog/viacep-como-consultar-cep/#:~:text=Para%20Consultar%20CEP%20basta%20voc%C3%AA,do%20Munic%C3%ADpio%2C%20UF%2C%20etc.">
-       Como consultar CEP através da API do ViaCep.</a><br>
+       tutorial:<a href="https://www.horadecodar.com.br/2020/02/19/como-bloquear-inputs-com-html-disabled-readonly/">Bloqueando inputs no HTML.</a><br>
+       <a href="https://nstecnologia.com.br/blog/viacep-como-consultar-cep/#:~:text=Para%20Consultar%20CEP%20basta%20voc%C3%AA,do%20Munic%C3%ADpio%2C%20UF%2C%20etc.">Como consultar CEP através da API do ViaCep.</a><br>
     `,
 
     etapa7:
@@ -202,10 +200,8 @@ var etapas = {
        #*
        imagem:assets/etapa7.png
        #*
-       tutorial:<a href="https://www.horadecodar.com.br/2020/02/19/como-bloquear-inputs-com-html-disabled-readonly/">
-       Bloqueando inputs no HTML.</a><br>
-       <a href="https://nstecnologia.com.br/blog/viacep-como-consultar-cep/#:~:text=Para%20Consultar%20CEP%20basta%20voc%C3%AA,do%20Munic%C3%ADpio%2C%20UF%2C%20etc.">
-       Como consultar CEP através da API do ViaCep.</a><br>
+       tutorial:<a href="https://www.horadecodar.com.br/2020/02/19/como-bloquear-inputs-com-html-disabled-readonly/">Bloqueando inputs no HTML.</a><br>
+       <a href="https://nstecnologia.com.br/blog/viacep-como-consultar-cep/#:~:text=Para%20Consultar%20CEP%20basta%20voc%C3%AA,do%20Munic%C3%ADpio%2C%20UF%2C%20etc.">Como consultar CEP através da API do ViaCep.</a><br>
     `,
         
     etapa8:
@@ -225,10 +221,8 @@ var etapas = {
        #*
        imagem: assets/etapa8.png
        #*
-       tutorial:<a href="https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/#:~:text=Regra%20para%20validar%20CPF&text=O%20CPF%20%C3%A9%20formado%20por,do%20sinal%20%22%2D%22).">
-       Algoritmo para validação de CPF</a><br>
-       <a href="https://learn.microsoft.com/pt-br/sql/relational-databases/tables/create-foreign-key-relationships?view=sql-server-ver16">
-       Criar relações de chaves estrangeiras</a><br>
+       tutorial:<a href="https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/#:~:text=Regra%20para%20validar%20CPF&text=O%20CPF%20%C3%A9%20formado%20por,do%20sinal%20%22%2D%22).">Algoritmo para validação de CPF</a><br>
+       <a href="https://learn.microsoft.com/pt-br/sql/relational-databases/tables/create-foreign-key-relationships?view=sql-server-ver16">Criar relações de chaves estrangeiras</a><br>
     `,
 
     etapa9:
@@ -249,8 +243,7 @@ var etapas = {
        <br><br>
        Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/u0mIPpz.png"><b>Clique Aqui</b></a>
        #*
-       tutorial:<a href="https://www.oficinadanet.com.br/artigo/php/gerando_pdfs_com_php_e_a_classe_fpdf_as_funcoes_da_biblioteca">
-       Gerando PDFs com PHP e a classe FPDF - As funções da biblioteca</a><br>
+       tutorial:<a href="https://www.oficinadanet.com.br/artigo/php/gerando_pdfs_com_php_e_a_classe_fpdf_as_funcoes_da_biblioteca">Gerando PDFs com PHP e a classe FPDF - As funções da biblioteca</a><br>
        <a href="http://www.fpdf.org/">Documentação oficial FPDF</a><br>
     `,
 
@@ -270,8 +263,7 @@ var etapas = {
        <br><br>
        Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/LQanPS9.png"><b>Clique Aqui</b></a>
        #*
-       tutorial:<a href="https://www.oficinadanet.com.br/artigo/php/gerando_pdfs_com_php_e_a_classe_fpdf_as_funcoes_da_biblioteca">
-       Gerando PDFs com PHP e a classe FPDF - As funções da biblioteca</a><br>
+       tutorial:<a href="https://www.oficinadanet.com.br/artigo/php/gerando_pdfs_com_php_e_a_classe_fpdf_as_funcoes_da_biblioteca">Gerando PDFs com PHP e a classe FPDF - As funções da biblioteca</a><br>
        <a href="http://www.fpdf.org/">Documentação oficial FPDF</a><br>
     `
 }
