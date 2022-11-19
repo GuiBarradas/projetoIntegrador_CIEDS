@@ -48,7 +48,7 @@ var etapas = {
         #*
         subtopico:Construir uma tela de filtro apresentando: 
         lista:Nome %Data de Nascimento %Ativo %CPF
-        <br><br>
+        #*
         (Na tela de filtro deverá ser possível pesquisar por nome, ativo, CPF e data de nascimento).
         #*
         imagem:assets/etapa2.png
