@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etapa 1</title>
+    <title>Etapa 8</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 
         #tudo {
             position: relative;
-            display: none;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -44,7 +44,6 @@
         }
 
         #menu {
-            visibility: hidden;
             position: fixed;
             display: flex;
             justify-content: center;
@@ -69,7 +68,7 @@
         #titulo {
             position: relative;
             font-family: 'Inter', sans-serif;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.401);
+            text-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.401);
             font-size: 48px;
             color: black;
         }
@@ -82,6 +81,21 @@
             font-size: 15px;
             text-shadow: none;
             min-width: max-content;
+        }
+
+        #voltar {
+            position: absolute;
+            top: 23%;
+            right: 2%;
+            width: 100px;
+            height: 45px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            cursor: pointer;
+        }
+
+        #voltar hover {
+            background-color: rgb(0, 0, 0);
         }
 
         #etapa {
@@ -100,19 +114,9 @@
 
         #titulo_etapa {
             font-size: 31px;
-            animation: entrada 1.3s ease 1 forwards;
-        }
-        @keyframes entrada{
-            0%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
         }
 
         .conteudo {
-            visibility: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -121,18 +125,6 @@
             gap: 15px;
             width: 100%;
             padding: 10px;
-            animation: entrada3 1.2s ease 1.3s 1 forwards;
-        }
-        @keyframes entrada3{
-            0%{
-                opacity: 0;
-                transform: translateY(-13.5px);
-            }
-            100%{
-                opacity: 1;
-                transform: translateY(0px);
-                visibility: visible;
-            }
         }
 
         .topicos {
@@ -189,7 +181,6 @@
 
         .div_video,
         .div_img,
-        #simulado,
         .topicos_conteudo {
             margin-bottom: 18px;
         }
@@ -202,21 +193,6 @@
             opacity: .5;
             border: 1px solid;
         }
-        #line_inicio{
-            opacity: 0;
-            transform-origin: center;
-            animation: entrada2 1.2s ease .2s 1 forwards;
-        }
-        @keyframes entrada2{
-            0%{
-                transform: scale(0);
-                opacity: 0;
-            }
-            100%{
-                transform: scale(1);
-                opacity: .5;
-            }
-        }
 
         #simulado {
             position: relative;
@@ -225,13 +201,11 @@
             align-items: flex-start;
             flex-direction: column;
             gap: 20px;
-            border: 6px ridge;
-            margin-left: 45px;
-            width: 90%;
+            width: 750px;
             /* min-height: 368px; */
             min-height: 340px;
             padding: 50px;
-            background-color: rgb(247, 247, 247);
+            background-color: rgba(189, 189, 189, 0.118);
         }
 
         .questao {
@@ -331,173 +305,41 @@
             height: 5px;
             background-color: #cdfeaa;
         }
-
-
-        #preload{
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            background-color: whitesmoke;
-            z-index: 999;
-        }
-        .loading{
-            position: relative;
-            width: 60px;
-            height: 60px;
-            background-color: transparent;
-            border-radius: 50%;
-            border: 3px solid rgb(222, 222, 222);
-            border-top: 3px solid rgb(44, 128, 254);
-            animation: loading .8s linear infinite;
-        }
-        @keyframes loading{
-            0%{
-                transform: rotate(0deg);
-            }
-            100%{
-                transform: rotate(360deg);
-            }
-        }
-
-        #pages{
+        .pager {
             position: absolute;
-            display: flex;
-            gap: 5px;
-            top: 35%;
-            right: 1.2%;
-        }
-        #voltar, #proximo {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5px 14px;
-            min-width: 80px;
-            height: 30px;
+            top: 10%;
+            right: 1%;
             font-family: 'Inter', sans-serif;
-            border: 1px solid rgb(216, 216, 216);
-            border-radius: 15px;
-            background-color: rgb(248, 248, 248);
             outline: none;
             cursor: pointer;
-            transition-duration: .2s;
-            overflow: hidden;
-            z-index: 999;
-        }
-        #voltar:hover, #proximo:hover {
-            background-color: rgb(241, 241, 241);
-            border: 1px solid rgb(181, 181, 181);
-        }
-        #voltar > span, #proximo > span{
-            position: absolute;
-            pointer-events: none;
-            background-color: rgb(199, 199, 199);
-            border-radius: 50%;
-            animation: ripple 1s linear infinite;
-        }
-        #voltar > p, #proximo > p{
-            z-index: 99999;
-        }
-        @keyframes ripple{
-            0%{
-                width: 0px;
-                height: 0px;
-                opacity: .5;
-            }
-            100%{
-                width: 500px;
-                height: 500px;
-                opacity: 0;
-            }
+
         }
 
-        #voltar_mobile, #proximo_mobile{
-            display: none;
+        #botaoVolta{
+            background-color: #f5f5f5;
         }
 
-        @media (max-width: 1200px) {
-            .videos{
-                height: 340px;
-            }
+        #botaoVolta:active {
+            color: #018538
         }
-        @media (max-width: 930px) {
-            .videos{
-                width: 80%;
-                height: 340px;
-            }
-        }
-        @media (max-width: 776px) {
-            .videos{
-                width: 90%;
-                height: 340px;
-            }
-        }
-        @media (max-width: 730px) {
-            .topicos{
-                width: 100%;
-                font-size: 25px;
-            }
-            #etapa{
-                width: 100vw;
-            }
-            .topicos_conteudo{
-                width: 100%;
-                padding-left: 10px;
-            }
-            #simulado{
-                margin-left: unset;
-                width: 100%;
-                padding: 20px;
-            }
-            .questao{
-                letter-spacing: 0px;
-            }
-            .respostas{
-                padding-left: 10px;
-                width: 100%;
-                font-size: 18px;
-            }
-            .respostas span{
-                width: 88%;
-            }
-            .div_video{
-                justify-content: flex-start;
-            }
-            .videos{
-                width: 100%;
-                height: 240px;
-            }
-            #logo{
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position: center;
-                width: 100px;
-            }
-            #titulo{
-                font-size: 38px;
-            }
-            #pages{
-                top: 0%;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-            }
-            #voltar, #proximo{
-                min-width: 50px;
-            }
-            #voltar_desktop, #proximo_desktop{
-                display: none;
-            }
-            #voltar_mobile, #proximo_mobile{
-                display: flex;
-            }
-        }
-        
 
+        #botaoVolta:hover {
+            border-bottom: 3px groove #cdfeaa;
+            background: #e9e9e9;
+        }
+
+        #botaoNext{
+            background-color: #f5f5f5;
+        }
+
+        #botaoNext:active {
+            color: #018538
+        }
+
+        #botaoNext:hover {
+            border-bottom: 3px groove #cdfeaa;
+            background: #e9e9e9;
+        }
     </style>
 
     <script src="banco/etapas.js"></script>
@@ -511,66 +353,22 @@
             document.querySelector('#proxQuestao').addEventListener('click', loadQuest);
             document.querySelectorAll('.imgs').forEach(elem => {
                 elem.addEventListener('mousemove', function (e) {
-                    /* let x = e.pageX - e.target.offsetLeft;
+                    let x = e.pageX - e.target.offsetLeft;
                     let y = e.pageY - e.target.offsetTop;
-                    this.style.transformOrigin = `${x}px ${y}px`; */
-                    this.style.transform = 'scale(1.16)';
+                    this.style.transformOrigin = `${x}px ${y}px`;
+                    this.style.transform = 'scale(1.2)';
                 });
                 elem.addEventListener('mouseout', function (e) {
                     this.style.transform = 'scale(1)';
                 });
             });
-
-            setTimeout(() => {
-                load();
-            }, 2000);
         });
-
-        function ripple_btn(e, btn, etp){
-            let span = document.createElement('span');
-            let antprox = btn.textContent;
-            btn.appendChild(span);
-            setTimeout(() => {
-                span.remove();
-                if(etp == 1 && (antprox == 'Voltar<' || antprox == '<'))
-                    window.location.href = 'index.html';
-                if(etp != 1 && (antprox == 'Voltar<' || antprox == 'Voltar Etapa' || antprox == '<'))
-                    window.location.href = `etapa1.html?etp=${+etp - 1}`;
-                if(antprox != 'Voltar<' && antprox != 'Voltar Etapa' && antprox != '<')
-                    window.location.href = `etapa1.html?etp=${+etp + 1}`;
-            }, 1000);
-        }
-
-        function load(){
-            document.querySelector('#preload').style.display = 'none';
-            document.querySelector('#menu').style.visibility = 'visible';
-            document.querySelector('#tudo').style.display = 'flex';
-        };
 
         function loadEtapa() {
             let divConteudo = document.querySelector('.conteudo');
             let cont = 0;
             let etp = location.search.replace('?', '').split('=')[1];
             document.querySelector('#titulo').textContent = `Etapa ${etp}`;
-
-            let mobile = window.matchMedia("(max-width: 730px)").matches ? 1 : 0;
-            if(etp != 1 && mobile == 0){
-                document.querySelector('#voltar').textContent = 'Voltar Etapa';
-            }else if(mobile == 1){
-                document.querySelector('#voltar').textContent = '<';
-            }
-
-            document.querySelector('#voltar').addEventListener('click', function(e){
-                ripple_btn(e, this, etp);
-            });
-            if(Object.keys(etapas).length == +etp){
-                document.querySelector('#proximo').remove();
-            }else{
-                document.querySelector('#proximo').addEventListener('click', function(e){
-                    ripple_btn(e, this, etp);
-                });
-            }
-
             let montaHTML = etapas[`etapa${etp}`].split('#*');
             for (let i = 0; i < montaHTML.length; i++) {
                 montaHTML[i] = montaHTML[i].replace(/\n/g, '').trim().replace(/\s{2,}/g, '');
@@ -662,16 +460,6 @@
             document.querySelector('#resultado').style.color = 'unset';
             document.querySelector('#proxQuestao').style.visibility = 'hidden';
 
-            if(!questionario[`etapa${etp}`]){
-                document.querySelector('#simulado').style.justifyContent = 'center';
-                document.querySelector('#simulado').style.alignItems = 'center';
-                document.querySelector('#simulado').innerHTML = `
-                    <span class='questao'>Simulado Inexistente</span>
-                    <button id="proxQuestao">▶</button>
-                `;
-                return;
-            }
-
             if (questao > (questionario[`etapa${etp}`].length - 1)) {
                 document.querySelector('#proxQuestao').removeEventListener('click', loadQuest);
                 document.querySelector('#simulado').style.justifyContent = 'center';
@@ -733,30 +521,25 @@
 </head>
 
 <body>
-    <div id="preload">
-        <span class="loading"></span>
-    </div>
     <div id="menu">
         <span id="logo"></span>
-        <span id="titulo">Treinamento</span>
-
-        <div id="pages">
-            <button id="voltar"><p id="voltar_desktop">Voltar<p id="voltar_mobile"><</p></p></button>
-            <button id="proximo"><p id="proximo_desktop">Próxima Etapa</p><p id="proximo_mobile">></p></button>
-        </div>
-
+        <span id="titulo">Etapa 8</span>
+            <ul class="pager">
+                <li><a href="etapa7.html?etp=7" id="botaoVolta">Voltar Etapa</a></li>
+                <li><a href="etapa9.html?etp=9" id="botaoNext">Próxima Etapa</a></li>
+            </ul>
     </div>
     <div id="tudo">
         <div id="etapa">
             <div id="titulo_etapa">
                 <span> Início </span>
             </div>
-            <hr id="line_inicio" class="line">
+            <hr class="line">
             <div class="conteudo">
                 <span class="topicos">
                     Simulado
                 </span>
-                <!-- <span class="topicos_conteudo"> -->
+                <span class="topicos_conteudo">
                     <div id="simulado">
                         <span class="questao"></span>
                         <div class="respostas">
@@ -768,14 +551,21 @@
                         <span id="resultado" class="questao res"></span>
                         <button id="proxQuestao">▶</button>
                     </div>
-                <!-- </span> -->
-                <br><hr style="width: 100%;" class="line"><br>
+                </span>
+                <br><hr style="left: 7%;" class="line"><br>
                 <span class="topicos" style="width: max-content;">
                     <div class="tutorial">Tutoriais Úteis:</div>
                 </span>
-
-                <span class="topicos_conteudo tut"></span>
-
+                <span class="topicos_conteudo tut">
+                    <a href="https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/#:~:text=Regra%20para%20validar%20CPF&text=O%20CPF%20%C3%A9%20formado%20por,do%20sinal%20%22%2D%22).">
+                        Algoritmo para validação de CPF
+                    </a>
+                    <br>
+                    <a href="https://learn.microsoft.com/pt-br/sql/relational-databases/tables/create-foreign-key-relationships?view=sql-server-ver16">
+                        Criar relações de chaves estrangeiras
+                    </a>
+                    <br>
+                </span>
             </div>
         </div>
 </body>
