@@ -42,59 +42,70 @@ var etapas =
         #*
         subtopico:Construir uma tela de filtro apresentando: 
         lista:Nome %Data de Nascimento %Ativo %CPF
-        <br><br>
+        #*
         (Na tela de filtro deverá ser possível pesquisar por nome, ativo, CPF e data de nascimento).
         #*
         imagem:assets/etapa2.png
+
+        #*
+        tutorial:<a href="https://www.ibm.com/docs/pt-br/netcoolomnibus/8.1?topic=reference-create-procedure-command-sql-procedures">Criando procedimentos (procedures) em SQL.</a>
+        <br>
+        <a href="https://kondado.com.br/blog/blog/2020/11/09/be-a-ba-do-sql-filtrando-valores-com-o-where/">Filtrando valores com o WHERE</a><br>
     `,
-       etapa3:
-       `
-       topico:1 - Formatando os campos do Formulário:
-       #*
-       subtopico: Impedir que os seguintes campos sejam gravados sem o devido preenchimento: 
-       lista:Nome %CPF %Data de Nascimento. <br><br>
-       Os campos devem ficar na cor amarela para indicar que são campos obrigatórios utilizando a classe <mark>required</mark>.
-       #*
-       video:https://www.youtube.com/embed/uvzFT-TCVFM
-       #*
-       topico:2 - Apresentar a idade do funcionário de acordo com a data de nascimento
-       #*
-       subtopico: O campo idade deverá ficar na cor cinza indicando que está bloqueado, usando <mark>readonly</mark> como classe e atributo.
-       #*
-       topico:3 - Validar a data de nascimento do funcionário
-       #*
-       subtopico: Não permitir que seja informado uma data futura ou inexistente como: "27/10/2077" ou "99/99/1234".
-       <br>
-       #*
-       topico:4 - Validar o CPF
-       #*
-       subtopico: Aceitar apenas CPFs válidos e verificar se o mesmo já foi registrado previamente em nosso sistema.<br>
-       Não permitir 2 funcionários distintos com o mesmo CPF.
-       #*
-       imagem:assets/etapa3.png
+    etapa3:
+    `
+        topico:1 - Formatando os campos do Formulário:
+        #*
+        subtopico: Impedir que os seguintes campos sejam gravados sem o devido preenchimento: 
+        lista:Nome %CPF %Data de Nascimento.
+        #*
+        Os campos devem ficar na cor amarela para indicar que são campos obrigatórios utilizando a classe <mark>required</mark>.
+        #*
+        video:https://www.youtube.com/embed/uvzFT-TCVFM
+        #*
+        topico:2 - Apresentar a idade do funcionário de acordo com a data de nascimento
+        #*
+        subtopico: O campo idade deverá ficar na cor cinza indicando que está bloqueado, usando <mark>readonly</mark> como classe e atributo.
+        #*
+        topico:3 - Validar a data de nascimento do funcionário
+        #*
+        subtopico: Não permitir que seja informado uma data futura ou inexistente como: "27/10/2077" ou "99/99/1234".
+        <br>
+        #*
+        topico:4 - Validar o CPF
+        #*
+        subtopico: Aceitar apenas CPFs válidos e verificar se o mesmo já foi registrado previamente em nosso sistema.<br>
+        Não permitir 2 funcionários distintos com o mesmo CPF.
+        #*
+        imagem:assets/etapa3.png
+        #*
+        tutorial:<a href="https://cursos.alura.com.br/forum/topico-por-que-usar-o-readonly-na-declaracao-53492">Por que utilizar o Readonly?</a><br>
+        <a href="http://www.linhadecodigo.com.br/artigo/2693/validando-campos-de-um-formulario-com-o-atributo-required.aspx">Validando campos de um formulário com o atributo required</a><br>
+        <a href="https://www.devmedia.com.br/validar-cpf-com-javascript/23916">Como validar CPF (Javascript)</a><br>
+        
 
-       `,
-
-       etapa4:
-       `
-       topico:1 - Adicionando novos campos:
-       #*
-       subtopico: Incluir no cadastro do funcionário o RG (Com máscara e validação) e o sexo cadastrado em uma tabela <mark><b>SEPARADA</b></mark> no banco de dados como <a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426"><b>FK (Chave Estrangeira)</b></a>.
-       #*
-       video:https://www.youtube.com/embed/l7h1YmgXXgw
-       #*
-       topico:2 - Criação do campo "Estado Civil"
-       #*
-       subtopico: O campo deverá ser uma <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/select"> <b>Combo Box</b> </a>.
-       #*
-       topico:3 - Criar parâmetros de filtragem
-       #*
-       subtopico: No filtro de cadastro criar parâmetro a partir de Data de Nascimento <b>inicial</b> e <b>final</b>.
-       <br>
-       #*
-       imagem:assets/etapa4.png
-    
-       `,
+    etapa4:
+    `
+        topico:1 - Adicionando novos campos:
+        #*
+        subtopico: Incluir no cadastro do funcionário o RG (Com máscara e validação) e o sexo cadastrado em uma tabela <mark><b>SEPARADA</b></mark> no banco de dados como <a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426"><b>FK (Chave Estrangeira)</b></a>.
+        #*
+        video:https://www.youtube.com/embed/l7h1YmgXXgw
+        #*
+        topico:2 - Criação do campo "Estado Civil"
+        #*
+        subtopico: O campo deverá ser uma <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/select"> <b>Combo Box</b> </a>.
+        #*
+        topico:3 - Criar parâmetros de filtragem
+        #*
+        subtopico: No filtro de cadastro criar parâmetro a partir de Data de Nascimento <b>inicial</b> e <b>final</b>.
+        <br>
+        #*
+        imagem:assets/etapa4.png
+        #*
+        tutorial:<a href="https://www.devmedia.com.br/sql-aprenda-a-utilizar-a-chave-primaria-e-a-chave-estrangeira/37636">Entenda como funcionam chaves estrangeiras.</a><br>
+        <a href="http://opensource.locaweb.com.br/locawebstyle-v2/manual/formularios/mascaras-forms/">Colocando Máscaras nos campos do formulario.</a><br>
+    `,
 
        etapa5:
        `
@@ -122,11 +133,14 @@ var etapas =
        na lista. Ex: 2 telefones principais.
        #*
        imagem:assets/etapa5.png
-    
-       `,
+
+       #*
+       tutorial:<a href="https://www.devmedia.com.br/breve-conceito-de-foreign-key/17426#:~:text=Chave%20estrangeira%20(foreign%20key)%20%C3%A9,%C3%A0%20qual%20tabela%20est%C3%A1%20relacionada.">Breve Conceito de Foreign key.</a><br>
+       <a href="https://celke.com.br/artigo/como-criar-accordion-com-javascript-e-bootstrap">Como criar efeito accordion com JavaScript e Bootstrap.</a><br>
+    `,
        
-       etapa6:
-       `
+    etapa6:
+    `
        topico:1 - Criar um novo accordion para endereço
        #*
        subtopico: Deverá ter os seguintes campos: 
@@ -157,11 +171,14 @@ var etapas =
        <b>OBS</b>: O Campo "Primeiro Emprego" é obrigatório e, caso seja o primeiro emprego do candidato, não será necessário informar o "PisPasep", apagando quaisquer valores existentes nesse campo e desabilitando o mesmo (Readonly) e ao recuperar o cadastro, o sistema também deverá <b>bloquear</b> ou <b>liberar</b> os campos.
        #*
        imagem:assets/etapa6.png
-    
-       `,
 
-       etapa7:
-       `
+       #*
+       tutorial:<a href="https://www.horadecodar.com.br/2020/02/19/como-bloquear-inputs-com-html-disabled-readonly/">Bloqueando inputs no HTML.</a><br>
+       <a href="https://nstecnologia.com.br/blog/viacep-como-consultar-cep/#:~:text=Para%20Consultar%20CEP%20basta%20voc%C3%AA,do%20Munic%C3%ADpio%2C%20UF%2C%20etc.">Como consultar CEP através da API do ViaCep.</a><br>
+    `,
+
+    etapa7:
+    `
        topico:1 - Montar um menu lateral por telas 
        #*
        subtopico: Cada tela deverá
@@ -179,11 +196,14 @@ var etapas =
        <b>OBS</b>: Essas configurações precisam ser feitas em <mark><b>TODAS</b></mark> as telas.
        #*
        imagem:assets/etapa7.png
-    
-       `,
+
+       #*
+       tutorial:<a href="https://www.horadecodar.com.br/2020/02/19/como-bloquear-inputs-com-html-disabled-readonly/">Bloqueando inputs no HTML.</a><br>
+       <a href="https://nstecnologia.com.br/blog/viacep-como-consultar-cep/#:~:text=Para%20Consultar%20CEP%20basta%20voc%C3%AA,do%20Munic%C3%ADpio%2C%20UF%2C%20etc.">Como consultar CEP através da API do ViaCep.</a><br>
+    `,
         
-       etapa8:
-       `
+    etapa8:
+    `
        topico:1 - Criar novo accordion para dependentes
        #*
        subtopico:  Na tela de cadastro de funcionário criar um novo accordion para dependentes, contendo uma lista grande com os seguintes campos:
@@ -199,10 +219,14 @@ var etapas =
        #*
        imagem: assets/etapa8.png
 
-       `,
+       #*
+       tutorial:<a href="https://dicasdeprogramacao.com.br/algoritmo-para-validar-cpf/#:~:text=Regra%20para%20validar%20CPF&text=O%20CPF%20%C3%A9%20formado%20por,do%20sinal%20%22%2D%22).">Algoritmo para validação de CPF</a><br>
+       <a href="https://learn.microsoft.com/pt-br/sql/relational-databases/tables/create-foreign-key-relationships?view=sql-server-ver16">Criar relações de chaves estrangeiras</a><br>
+    `,
 
-       etapa9:
-       `
+    etapa9:
+    `
+
        topico:1 - PDF - Relatório Geral de Funcionários
        #*
        subtopico: No filtro de candidatos, criar um relatório geral de funcionários ativos utilizando a classe "<mark><b>FPDF</mark></b>" do PHP.
@@ -219,10 +243,12 @@ var etapas =
        <br><br>
        Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/u0mIPpz.png"><b>Clique Aqui</b></a>
        #*
-       `,
 
-       etapa10:
-       `
+       tutorial:<a href="https://www.oficinadanet.com.br/artigo/php/gerando_pdfs_com_php_e_a_classe_fpdf_as_funcoes_da_biblioteca">Gerando PDFs com PHP e a classe FPDF - As funções da biblioteca</a><br>
+       <a href="http://www.fpdf.org/">Documentação oficial FPDF</a><br>
+    `,
+
+ 
        topico:1 - PDF - Relatório Individual 
        #*
        subtopico: Criar um relatório individual para cada funcionário cadastrado
@@ -236,6 +262,10 @@ var etapas =
        subtopico: O primeiro botão deverá ficar localizado no footer da página, com o nome “Relatório Contato" e, ao clicar no botão, será gerado um relatório de dados de contato, com cabeçalho e trazendo às listas de contato do usuário apresentado na tela.
        <br><br>
        Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/LQanPS9.png"><b>Clique Aqui</b></a>
-       
-       `
-    }
+
+       #*
+       tutorial:<a href="https://www.oficinadanet.com.br/artigo/php/gerando_pdfs_com_php_e_a_classe_fpdf_as_funcoes_da_biblioteca">Gerando PDFs com PHP e a classe FPDF - As funções da biblioteca</a><br>
+       <a href="http://www.fpdf.org/">Documentação oficial FPDF</a><br>
+    `
+}
+
