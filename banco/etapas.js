@@ -163,13 +163,11 @@ var etapas =
        `
        topico:1 - Montar um menu lateral por telas 
        #*
-       subtopico: Cada tela deverá
-       pertencer ao seu menu e todos os itens da tela devem ser coerentes ao seu menu lateral (<b>config.ui.php</b>)
+       subtopico: Cada tela deverá pertencer ao seu menu e todos os itens da tela devem ser coerentes ao seu menu lateral (<b>config.ui.php</b>)
        #*
        topico:2 - Referenciação 
        #*
-       subtopico: Na parte superior da página também precisará
-       estar referenciado, de forma correta, de acordo com o menu. (<b>Breadcrumbs</b>)
+       subtopico: Na parte superior da página também precisará estar referenciado, de forma correta, de acordo com o menu. (<b>Breadcrumbs</b>)
        #*
        topico:3 - Ponteiro
        #*
@@ -196,7 +194,7 @@ var etapas =
        #*
        subtopico: Nas tabelas básicas de <b>Sexo</b> e <b>Tipo Dependente</b> verificar se foi feita uma validação para impedir cadastrar dois nomes iguais para não haver duplicidade.
        #*
-       imagem: assets/etapa8.png
+       
 
        `,
 
@@ -206,7 +204,7 @@ var etapas =
        #*
        subtopico: No filtro de candidatos, criar um relatório geral de funcionários ativos utilizando a classe "<mark><b>FPDF</mark></b>" do PHP.
        #*
-       video:https://youtu.be/embed/aLIz_qgk5z4
+       video:https://www.youtube.com/embed/InT7WacebpY
        #*
        topico:2 - Filtragem
        #*
@@ -216,7 +214,7 @@ var etapas =
        #*
        subtopico: O relatório deverá ser feito em PDF à partir dos exemplos que serão informados no Discord. Porém, cada um poderá usar a sua criatividade para preencher da melhor forma possível o PDF.
        <br><br>
-       Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/u0mIPpz.png"><b>Clique Aqui</b></a>
+       Segue um exemplo de um dos PDFs feitos pelos nossos aprendizes: <a href="https://i.imgur.com/u0mIPpz.png"><b>Clique aqui</b></a> 
        #*
        `,
 

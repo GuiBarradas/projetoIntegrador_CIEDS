@@ -76,4 +76,43 @@ var questionario = {
             resposta: 'A'
         },
     ],
+
+    etapa6:[
+       
+
+        {
+            questao: '1) Para que serve às APIs?',
+            a: 'A) Deixar o sistema rápido.',
+            b: 'B) Armazenar dados.',
+            c: 'C) Integrar dados e comunicar-se entre sistemas',
+            d: 'D) Aplicações de boas práticas no código',
+            resposta: 'C'
+        },
+    ],
+
+    etapa7:[
+       
+
+        {
+            questao: '1) Os menus de navegação são:',
+            a: 'A) Links que possibilitam levar o usuário de uma página a outra dentro do site..',
+            b: 'B) Menus que navegam pelo site.',
+            c: 'C) Menus feitos para amparar o usuário, localizando-se no footer',
+            d: 'D) Nenhuma das alternativas acima',
+            resposta: 'A'
+        },
+    ],
+
+    etapa9:[
+       
+
+        {
+            questao: '1) O que é uma library?',
+            a: 'A) É uma extensão do código',
+            b: 'B) Uma linguagem de programação',
+            c: 'C) Uma coleção de recursos',
+            d: 'D) Uma API',
+            resposta: 'C'
+        },
+    ],
 }
