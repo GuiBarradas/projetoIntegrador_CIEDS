@@ -117,8 +117,7 @@ var etapas =
        #*
        topico:4 - Validação
        #*
-       subtopico: Validar os itens em ambas as listas, não permitindo 2
-       telefones ou emails iguais, também não permitir 2 itens principais
+       subtopico: Validar os itens em ambas as listas, não permitindo 2 telefones ou emails iguais, também não permitir 2 itens principais
        na lista. Ex: 2 telefones principais.
        #*
        imagem:assets/etapa5.png
