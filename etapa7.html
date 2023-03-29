@@ -59,6 +59,7 @@
         #logo {
             position: absolute;
             left: 2%;
+            top: 12%;
             width: 180px;
             height: 60px;
             background-image: url(assets/NTL.png);
@@ -262,32 +263,32 @@
             background-color: rgb(212, 212, 212);
         }
 
-        a {
+        .linkTuto {
             text-decoration-color: greenyellow;
             text-underline-position: under;
             padding: 2px 1px 0;
             font-family: 'Inter', sans-serif;
         }
 
-        a:link {
+        .linkTuto:link {
             color: #221f1f;
         }
 
-        a:visited {
+        .linkTuto:visited {
             color: #000000;
         }
 
-        a:focus {
+        .linkTuto:focus {
             border-bottom: 1px solid;
             background: #bae498;
         }
 
-        a:hover {
+        .linkTuto:hover {
             border-bottom: 1px solid;
             background: #cdfeaa;
         }
 
-        a:active {
+        .linkTuto:active {
             background: #999b97;
             color: #cdfeaa;
         }
@@ -524,7 +525,7 @@
 
 <body>
     <div id="menu">
-        <span id="logo"></span>
+        <a href="index.html"><span id="logo"></span></a>
         <span id="titulo">Treinamento</span>
             <ul class="pager">
                 <li><a href="etapa6.html?etp=6" id="botaoVolta">Voltar Etapa</a></li>
